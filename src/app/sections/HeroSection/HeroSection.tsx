@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { tours } from '@/data/tours'
 import Slider from './Slider'
 import styles from './HeroSection.module.css'
 
@@ -9,18 +8,30 @@ type HeroSectionProps = {
 
 const heroImages = [
   {
-    src: '/images/home/unixpeak-banner.jpg',
-    alt: 'Unix Peak Travel tailor-made Thailand private tours and corporate travel programs',
+    src: '/images/hero/Hero-1.png',
+    alt: 'Unix Peak Travel Thailand tour program slide',
   },
-  ...tours.slice(0, 4).map((tour) => ({
-    src: tour.image,
-    alt: `${tour.title} travel program by Unix Peak Travel`,
-  })),
-].filter(
-  (image, index, images) =>
-    image.src.trim().length > 0 &&
-    images.findIndex((item) => item.src === image.src) === index,
-)
+  {
+    src: '/images/hero/Hero-2.png',
+    alt: 'Unix Peak Travel private trip planning slide',
+  },
+  {
+    src: '/images/hero/Hero-3.png',
+    alt: 'Unix Peak Travel group tour and destination slide',
+  },
+  {
+    src: '/images/hero/Hero-4.png',
+    alt: 'Unix Peak Travel corporate travel and MICE slide',
+  },
+  {
+    src: '/images/hero/Hero-5.png',
+    alt: 'Unix Peak Travel tailor-made travel package slide',
+  },
+  {
+    src: '/images/hero/Hero-6.png',
+    alt: 'Unix Peak Travel international travel program slide',
+  },
+]
 
 export default function HeroSection({ companyName }: HeroSectionProps) {
   return (

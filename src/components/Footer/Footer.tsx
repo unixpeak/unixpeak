@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ContactsBox, type ContactBoxLink } from "@/components/ContactsBox/ContactsBox";
 import { siteInfo } from "@/data/site";
 import styles from "./Footer.module.css";
 
@@ -6,70 +8,117 @@ export function Footer() {
   const facebook = siteInfo.socialLinks.find((link) => link.label === "Facebook");
   const instagram = siteInfo.socialLinks.find((link) => link.label === "Instagram");
   const line = siteInfo.socialLinks.find((link) => link.label === "LINE OA");
+  const whatsapp = siteInfo.socialLinks.find((link) => link.label === "WhatsApp");
+  const primaryPhone = siteInfo.contact.phones[0];
+  const year = new Date().getFullYear();
+
+  const contactItems = [
+    line
+      ? {
+          label: "LINE",
+          href: line.href,
+          icon: "/icons/LINE.png",
+          external: true,
+        }
+      : null,
+    facebook
+      ? {
+          label: "Facebook",
+          href: facebook.href,
+          icon: "/icons/Facebook.png",
+          external: true,
+        }
+      : null,
+    instagram
+      ? {
+          label: "Instagram",
+          href: instagram.href,
+          icon: "/icons/IG.svg",
+          external: true,
+        }
+      : null,
+    whatsapp
+      ? {
+          label: "WhatsApp",
+          href: whatsapp.href,
+          icon: "/icons/Whatsapp.svg",
+          external: true,
+        }
+      : null,
+    primaryPhone
+      ? {
+          label: "Phone",
+          href: `tel:${primaryPhone.phone.replaceAll("-", "")}`,
+          icon: "/icons/Phone.png",
+          external: false,
+        }
+      : null,
+  ];
+  const contactLinks = contactItems.filter(
+    (link): link is ContactBoxLink => Boolean(link),
+  );
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
-        <section className={styles.company} aria-label="Company information">
-          <Image
-            className={styles.logo}
-            src="/logo/unixpeak-logo.png"
-            alt={`${siteInfo.companyName} logo`}
-            width={150}
-            height={50}
-          />
-          <p className={styles.kicker}>Licensed travel company in Thailand</p>
-          <h2>{siteInfo.companyName}</h2>
-          <p>{siteInfo.shortDescription}</p>
-          <p className={styles.licence}>TAT licence: {siteInfo.tatLicence}</p>
-        </section>
+      <div className={`container ${styles.container}`}>
+        <div className={styles.top}>
+          <Link href="/" className={styles.brand} aria-label="Unix Peak Travel home">
+            <Image
+              className={styles.logo}
+              src="/logo/unixpeak-logo.svg"
+              alt={`${siteInfo.companyName} logo`}
+              width={220}
+              height={80}
+            />
+          </Link>
 
-        <section className={styles.column} aria-label="Contact details">
-          <h3>Contact</h3>
-          <ul>
+          <p className={styles.description}>{siteInfo.shortDescription}</p>
+
+          <ContactsBox links={contactLinks} />
+
+          <div className={styles.contactText} aria-label="Contact details">
             {siteInfo.contact.phones.map((contact) => (
-              <li key={contact.phone}>
-                <a href={`tel:${contact.phone.replaceAll("-", "")}`}>
-                  {contact.phone} {contact.nameTh}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a href={`https://wa.me/${siteInfo.contact.whatsapp.replace("+", "")}`}>
-                WhatsApp {siteInfo.contact.whatsapp}
-              </a>
-            </li>
-            <li>
               <a
-                href={line?.href ?? `https://line.me/ti/p/~${siteInfo.contact.lineOA}`}
-                target="_blank"
-                rel="noreferrer"
+                key={contact.phone}
+                href={`tel:${contact.phone.replaceAll("-", "")}`}
               >
-                LINE OA: {siteInfo.contact.lineOA}
+                {contact.phone} {contact.nameTh}
               </a>
-            </li>
-          </ul>
-        </section>
+            ))}
+            <a href={whatsapp?.href ?? `https://wa.me/${siteInfo.contact.whatsapp.replace("+", "")}`}>
+              WhatsApp {siteInfo.contact.whatsapp}
+            </a>
+            <a
+              href={line?.href ?? `https://line.me/ti/p/~${siteInfo.contact.lineOA}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LINE OA {siteInfo.contact.lineOA}
+            </a>
+          </div>
+        </div>
 
-        <section className={styles.column} aria-label="Social media">
-          <h3>Social</h3>
-          <ul>
-            {facebook ? (
-              <li>
-                <a href={facebook.href} target="_blank" rel="noreferrer">
-                  Facebook: {facebook.value}
-                </a>
-              </li>
-            ) : null}
-            {instagram ? (
-              <li>
-                <a href={instagram.href} target="_blank" rel="noreferrer">
-                  Instagram: {instagram.value}
-                </a>
-              </li>
-            ) : null}
-          </ul>
-        </section>
+        <div className={styles.meta}>
+          <div className={styles.metaLeft}>
+            <span className={styles.licence}>TAT licence {siteInfo.tatLicence}</span>
+            <span className={styles.servicePill}>Private tours</span>
+            <span className={styles.servicePill}>MICE</span>
+            <span className={styles.servicePill}>Corporate travel</span>
+          </div>
+
+          <div className={styles.metaRight}>
+            <p className={styles.copy}>
+              © {year} {siteInfo.companyName}. All rights reserved.
+            </p>
+            <div className={styles.metaLinks} aria-label="Footer navigation">
+              {siteInfo.mainNavigation.map((link) => (
+                <Link key={link.href} href={link.href} className={styles.metaLink}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

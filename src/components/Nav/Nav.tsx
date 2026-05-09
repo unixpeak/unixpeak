@@ -32,10 +32,10 @@ export function Nav() {
           <span className={styles.logoFrame}>
             <Image
               className={styles.logo}
-              src="/logo/unixpeak-logo.png"
+              src="/logo/unixpeak-logo.svg"
               alt={`${siteInfo.companyName} logo`}
-              width={132}
-              height={44}
+              width={180}
+              height={60}
               priority
             />
           </span>
@@ -91,10 +91,10 @@ export function Nav() {
           <div className={styles.drawerBrand}>
             <Image
               className={styles.drawerLogo}
-              src="/logo/unixpeak-logo.png"
+              src="/logo/unixpeak-logo.svg"
               alt={`${siteInfo.companyName} logo`}
-              width={116}
-              height={38}
+              width={160}
+              height={54}
             />
             <p className={styles.drawerEyebrow}>Menu</p>
             <p className={styles.drawerTitle}>{siteInfo.companyName}</p>
