@@ -1,0 +1,126 @@
+.finalCta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  width: min(100%, var(--layout-max-width));
+  margin: 0 auto;
+  gap: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-soft);
+  box-shadow: var(--shadow-card);
+  padding-top: 36px;
+  padding-right: var(--layout-gutter);
+  padding-bottom: 36px;
+  padding-left: var(--layout-gutter);
+}
+
+.finalCta > div:first-child {
+  display: grid;
+  max-width: 760px;
+  gap: 12px;
+}
+
+.eyebrow {
+  color: var(--color-accent-strong);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.finalCta h2 {
+  color: var(--color-text);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.finalCta p {
+  color: var(--color-text-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 0 20px;
+  text-align: center;
+  white-space: normal;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.primaryButton {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-accent-strong);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton:hover {
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+
+.secondaryButton:hover {
+  background: var(--color-accent-soft);
+}
+
+.textLink {
+  color: var(--color-accent-strong);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+@media (max-width: 980px) {
+  .finalCta {
+    grid-template-columns: 1fr;
+  }
+
+  .contactActions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .contactActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    min-width: 0;
+  }
+}

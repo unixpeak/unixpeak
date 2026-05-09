@@ -1,0 +1,114 @@
+.page {
+  display: grid;
+  width: min(100%, var(--layout-max-width));
+  min-height: 62vh;
+  margin: 0 auto;
+  padding: clamp(44px, 8vw, 100px) var(--layout-gutter) var(--layout-section);
+  place-items: center;
+}
+
+.card {
+  display: grid;
+  max-width: 780px;
+  gap: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  padding: clamp(28px, 6vw, 56px);
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--color-accent-strong);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  color: var(--color-text);
+  font-size: clamp(30px, 5.8vw, 52px);
+  font-weight: 850;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.intro,
+.introTh {
+  color: var(--color-text-muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.introTh {
+  color: var(--color-text-soft);
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.25;
+  padding: 0 20px;
+  text-align: center;
+  white-space: normal;
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base), transform var(--transition-fast);
+}
+
+.primaryButton {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.secondaryButton {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-accent-strong);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton:hover {
+  border-color: var(--color-accent-strong);
+  background: var(--color-accent-strong);
+}
+
+.secondaryButton:hover {
+  background: var(--color-accent-soft);
+}
+
+.textLink {
+  align-self: center;
+  color: var(--color-accent-strong);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+@media (max-width: 560px) {
+  .actions,
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    min-width: 0;
+  }
+}

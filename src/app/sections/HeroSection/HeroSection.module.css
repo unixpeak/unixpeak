@@ -1,0 +1,132 @@
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: var(--section-y);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.contentGrid {
+  display: block;
+}
+
+.textBox {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.86),
+      rgba(255, 255, 255, 0.58)
+    ),
+    var(--con-bg);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.textBox {
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.kicker {
+  width: fit-content;
+  margin: 0 0 0.85rem;
+  padding: 0.42rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 860px;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.95rem, 4.5vw, 3.9rem);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.desc,
+.descTh {
+  max-width: 760px;
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.descTh {
+  max-width: 720px;
+  margin-top: 0.6rem;
+  color: var(--muted-2);
+  font-size: 1.02rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-bottom: calc(var(--section-y) * 0.8);
+  }
+
+  .content {
+    margin-top: 1rem;
+  }
+
+  .textBox {
+    border-radius: var(--r-md);
+  }
+
+  .textBox {
+    padding: 1.15rem;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 10vw, 2.75rem);
+  }
+
+  .title br {
+    display: none;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 426px) {
+  .kicker {
+    font-size: 0.74rem;
+  }
+
+  .desc,
+  .descTh {
+    font-size: 1rem;
+  }
+}
