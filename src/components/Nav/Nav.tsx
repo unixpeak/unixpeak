@@ -21,56 +21,58 @@ export function Nav() {
   }, [isOpen]);
 
   return (
-    <header className={styles.header}>
-      <div className={styles.inner}>
-        <Link
-          className={styles.brand}
-          href="/"
-          aria-label={`${siteInfo.companyName} home`}
-          onClick={closeMenu}
-        >
-          <span className={styles.logoFrame}>
-            <Image
-              className={styles.logo}
-              src="/logo/unixpeak-logo.svg"
-              alt={`${siteInfo.companyName} logo`}
-              width={180}
-              height={60}
-              priority
-            />
-          </span>
-          <span>
-            <span className={styles.brandName}>{siteInfo.companyName}</span>
-          </span>
-        </Link>
+    <>
+      <header className={styles.header}>
+        <div className={styles.inner}>
+          <Link
+            className={styles.brand}
+            href="/"
+            aria-label={`${siteInfo.companyName} home`}
+            onClick={closeMenu}
+          >
+            <span className={styles.logoFrame}>
+              <Image
+                className={styles.logo}
+                src="/logo/unixpeak-logo.svg"
+                alt={`${siteInfo.companyName} logo`}
+                width={180}
+                height={60}
+                priority
+              />
+            </span>
+            <span>
+              <span className={styles.brandName}>{siteInfo.companyName}</span>
+            </span>
+          </Link>
 
-        <nav className={styles.desktopNav} aria-label="Primary navigation">
-          {siteInfo.mainNavigation.map((link) => (
-            <Link
-              className={`${styles.navLink} ${
-                pathname === link.href ? styles.activeLink : ""
-              }`}
-              href={link.href}
-              key={link.href}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className={styles.desktopNav} aria-label="Primary navigation">
+            {siteInfo.mainNavigation.map((link) => (
+              <Link
+                className={`${styles.navLink} ${
+                  pathname === link.href ? styles.activeLink : ""
+                }`}
+                href={link.href}
+                key={link.href}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          className={styles.menuButton}
-          type="button"
-          aria-label="Open navigation menu"
-          aria-controls="mobile-navigation"
-          aria-expanded={isOpen}
-          onClick={openMenu}
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </button>
-      </div>
+          <button
+            className={styles.menuButton}
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="mobile-navigation"
+            aria-expanded={isOpen}
+            onClick={openMenu}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
+        </div>
+      </header>
 
       <button
         className={`${styles.backdrop} ${isOpen ? styles.backdropOpen : ""}`}
@@ -92,10 +94,9 @@ export function Nav() {
               className={styles.drawerLogo}
               src="/logo/unixpeak-logo.svg"
               alt={`${siteInfo.companyName} logo`}
-              width={160}
-              height={54}
+              width={132}
+              height={44}
             />
-            <p className={styles.drawerEyebrow}>Menu</p>
             <p className={styles.drawerTitle}>{siteInfo.companyName}</p>
           </div>
           <button
@@ -104,7 +105,13 @@ export function Nav() {
             aria-label="Close navigation menu"
             onClick={closeMenu}
           >
-            <span aria-hidden="true">Close</span>
+            <Image
+              src="/icons/Utils/close-x.svg"
+              alt=""
+              width={20}
+              height={20}
+              aria-hidden="true"
+            />
           </button>
         </div>
 
@@ -131,6 +138,6 @@ export function Nav() {
           </a>
         </div>
       </aside>
-    </header>
+    </>
   );
 }

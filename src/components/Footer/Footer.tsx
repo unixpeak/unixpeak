@@ -49,7 +49,7 @@ export function Footer() {
       ? {
           label: "Phone",
           href: `tel:${primaryPhone.phone.replaceAll("-", "")}`,
-          icon: "/icons/Phone.png",
+          icon: "/icons/Phone.svg",
           external: false,
         }
       : null,

@@ -9,8 +9,9 @@
 
   --container: 1280px;
   --pad-x: 2rem;
+  --nav-height: 76px;
   --section-y: 2.75rem;
-  --scroll-offset: 86px;
+  --scroll-offset: calc(var(--nav-height) + 10px);
 
   --font-display: 'Merriweather', 'Noto Sans Thai', 'Prompt', serif;
   --font-body: 'Noto Sans Thai', 'Prompt', sans-serif;
@@ -125,6 +126,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: clip;
+  padding-top: var(--nav-height);
 
   color: var(--text);
   font-family: var(--font-body);
@@ -498,7 +500,6 @@ li {
   }
 
   :root {
-    --scroll-offset: 78px;
     --section-y: 2.35rem;
   }
 }
@@ -510,7 +511,7 @@ li {
 
   :root {
     --pad-x: 1rem;
-    --scroll-offset: 72px;
+    --nav-height: 68px;
     --section-y: 2rem;
   }
 
