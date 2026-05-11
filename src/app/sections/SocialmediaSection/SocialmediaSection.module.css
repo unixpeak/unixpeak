@@ -125,7 +125,7 @@
   border: 0 !important;
 }
 
-.instagramPlaceholder {
+.socialPlaceholder {
   display: grid;
   width: 100%;
   min-height: 620px;
@@ -135,7 +135,7 @@
     #ffffff;
 }
 
-.instagramPlaceholder span {
+.socialPlaceholder span {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -223,7 +223,7 @@
   }
 
   .embedWrap,
-  .instagramPlaceholder {
+  .socialPlaceholder {
     min-height: 560px;
   }
 

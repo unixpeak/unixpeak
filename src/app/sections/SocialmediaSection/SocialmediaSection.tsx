@@ -31,9 +31,8 @@ export default function SocialmediaSection({
   instagramHref,
 }: SocialmediaSectionProps) {
   const facebookRef = useRef<HTMLDivElement | null>(null)
-  const instagramRef = useRef<HTMLDivElement | null>(null)
   const [facebookWidth, setFacebookWidth] = useState(420)
-  const [shouldLoadInstagram, setShouldLoadInstagram] = useState(false)
+  const [shouldLoadEmbeds, setShouldLoadEmbeds] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
 
   const instagramUrl = normalizeInstagramUrl(instagramHref)
@@ -56,33 +55,22 @@ export default function SocialmediaSection({
   }, [])
 
   useEffect(() => {
-    const element = instagramRef.current
-    if (!element) return
+    const loadEmbeds = () => setShouldLoadEmbeds(true)
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0]
-        if (!entry?.isIntersecting) return
+    if (document.readyState === 'complete') {
+      loadEmbeds()
+      return
+    }
 
-        setShouldLoadInstagram(true)
-        observer.disconnect()
-      },
-      {
-        root: null,
-        rootMargin: '240px 0px',
-        threshold: 0.1,
-      },
-    )
+    window.addEventListener('load', loadEmbeds, { once: true })
 
-    observer.observe(element)
-
-    return () => observer.disconnect()
+    return () => window.removeEventListener('load', loadEmbeds)
   }, [])
 
   useEffect(() => {
-    if (!shouldLoadInstagram || !scriptLoaded) return
+    if (!shouldLoadEmbeds || !scriptLoaded) return
     window.instgrm?.Embeds?.process?.()
-  }, [shouldLoadInstagram, scriptLoaded])
+  }, [shouldLoadEmbeds, scriptLoaded])
 
   const facebookEmbedSrc = useMemo(() => {
     const href = encodeURIComponent(facebookHref)
@@ -121,17 +109,23 @@ export default function SocialmediaSection({
             </div>
 
             <div ref={facebookRef} className={styles.embedWrap}>
-              <iframe
-                key={facebookEmbedSrc}
-                title="Unix Peak Travel Facebook page"
-                className={styles.facebookFrame}
-                src={facebookEmbedSrc}
-                width={facebookWidth}
-                height={facebookHeight}
-                loading="lazy"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                allowFullScreen
-              />
+              {shouldLoadEmbeds ? (
+                <iframe
+                  key={facebookEmbedSrc}
+                  title="Unix Peak Travel Facebook page"
+                  className={styles.facebookFrame}
+                  src={facebookEmbedSrc}
+                  width={facebookWidth}
+                  height={facebookHeight}
+                  loading="eager"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              ) : (
+                <div className={styles.socialPlaceholder} aria-hidden="true">
+                  <span>Facebook</span>
+                </div>
+              )}
             </div>
 
             <div className={styles.actions}>
@@ -150,7 +144,7 @@ export default function SocialmediaSection({
             </div>
           </article>
 
-          <article ref={instagramRef} className={styles.card}>
+          <article className={styles.card}>
             <div className={styles.top}>
               <p className={styles.label}>Instagram</p>
               <h3 className={styles.cardTitle}>@unixpeak.thailand</h3>
@@ -161,14 +155,14 @@ export default function SocialmediaSection({
             </div>
 
             <div className={styles.embedWrap}>
-              {shouldLoadInstagram ? (
+              {shouldLoadEmbeds ? (
                 <blockquote
                   className="instagram-media"
                   data-instgrm-permalink={instagramUrl}
                   data-instgrm-version="14"
                 />
               ) : (
-                <div className={styles.instagramPlaceholder} aria-hidden="true">
+                <div className={styles.socialPlaceholder} aria-hidden="true">
                   <span>Instagram</span>
                 </div>
               )}
@@ -192,7 +186,7 @@ export default function SocialmediaSection({
         </div>
       </div>
 
-      {shouldLoadInstagram ? (
+      {shouldLoadEmbeds ? (
         <Script
           src="https://www.instagram.com/embed.js"
           strategy="afterInteractive"
