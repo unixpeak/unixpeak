@@ -127,7 +127,7 @@
   right: 0;
   z-index: 90;
   display: flex;
-  width: min(86vw, 380px);
+  width: min(80vw, 380px);
   height: 100dvh;
   flex-direction: column;
   gap: 26px;
@@ -273,7 +273,7 @@
   }
 
   .drawer {
-    width: min(90vw, 360px);
+    width: min(80vw, 360px);
     padding: 20px;
   }
 
