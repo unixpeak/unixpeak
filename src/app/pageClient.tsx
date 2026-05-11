@@ -59,13 +59,16 @@ export default function PageClient() {
 
   return (
     <div className={styles.page}>
-      <HeroSection
-        companyName={siteInfo.companyName}
-      />
+      <HeroSection companyName={siteInfo.companyName} />
 
       <ServicesSection services={services} />
 
       <FeaturedToursSection tours={featuredTours} />
+
+      <SocialmediaSection
+        facebookHref={facebookLink}
+        instagramHref={instagramLink}
+      />
 
       <WhyChooseSection reasons={reasons} />
 
@@ -74,11 +77,6 @@ export default function PageClient() {
         lineOA={siteInfo.contact.lineOA}
         lineLink={lineLink}
         primaryPhone={primaryPhone}
-      />
-
-      <SocialmediaSection
-        facebookHref={facebookLink}
-        instagramHref={instagramLink}
       />
     </div>
   )
