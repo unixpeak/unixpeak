@@ -1,7 +1,7 @@
 .section {
   position: relative;
   display: grid;
-  width: min(100%, var(--container, 1280px));
+  width: min(100%, var(--container, 64rem));
   margin: 0 auto;
   padding: var(--section-y, 4rem) var(--pad-x, 2rem);
   gap: clamp(1.5rem, 3vw, 2.5rem);
@@ -42,7 +42,7 @@
   max-width: 760px;
   color: var(--text, #21372a);
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: var(--fs-section-title, 2.4rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.035em;
@@ -126,7 +126,7 @@
 .tourTitle {
   color: var(--text, #21372a);
   font-family: var(--font-body);
-  font-size: clamp(1.25rem, 1.8vw, 1.45rem);
+  font-size: var(--fs-card-title, 1.35rem);
   font-weight: 850;
   line-height: 1.22;
   letter-spacing: -0.02em;
@@ -233,6 +233,11 @@
     align-items: start;
   }
 
+  .headingGroup {
+    justify-items: center;
+    text-align: center;
+  }
+
   .intro {
     max-width: 680px;
   }
@@ -244,8 +249,9 @@
   }
 
   .cardFooter {
-    display: grid;
-    justify-items: start;
+    flex-direction: column;
+    justify-items: center;
+    align-content: center;
   }
 
   .cardLink {

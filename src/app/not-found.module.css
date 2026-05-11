@@ -39,13 +39,13 @@
 .intro,
 .introTh {
   color: var(--color-text-muted);
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
 .introTh {
   color: var(--color-text-soft);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .actions {

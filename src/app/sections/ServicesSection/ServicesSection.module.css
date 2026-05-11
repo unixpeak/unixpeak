@@ -161,6 +161,11 @@
     align-items: start;
   }
 
+  .headingGroup {
+    justify-items: center;
+    text-align: center;
+  }
+
   .intro {
     width: 100%;
   }

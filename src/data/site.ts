@@ -93,7 +93,7 @@ export const siteInfo: SiteInfo = {
     {
       label: "Home",
       labelTh: "หน้าแรก",
-      href: "/",
+      href: "/#top",
     },
     {
       label: "Program Tours",

@@ -16,7 +16,7 @@ export default function NotFound() {
           สามารถกลับหน้าแรก ดูโปรแกรมทัวร์ หรือติดต่อทีมงานได้
         </p>
         <div className={styles.actions}>
-          <Link className={styles.primaryButton} href="/">
+          <Link className={styles.primaryButton} href="/#top">
             Home
           </Link>
           <Link className={styles.secondaryButton} href="/program-tours">

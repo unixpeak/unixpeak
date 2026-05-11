@@ -38,7 +38,7 @@
 
 .finalCta p {
   color: var(--color-text-muted);
-  font-size: 17px;
+  font-size: 1rem;
   line-height: 1.7;
 }
 

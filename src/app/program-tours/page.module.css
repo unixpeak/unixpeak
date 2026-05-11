@@ -8,7 +8,7 @@
 .hero,
 .tourList,
 .cta {
-  width: min(100%, var(--container, 1280px));
+  width: min(100%, var(--container, 64rem));
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
   max-width: 920px;
   color: var(--text, #21372a);
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  font-size: var(--fs-hero-title, 3.2rem);
   font-weight: 850;
   line-height: 0.98;
   letter-spacing: -0.045em;
@@ -179,7 +179,7 @@
   margin-top: 0.45rem;
   color: var(--text, #21372a);
   font-family: var(--font-display);
-  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-size: var(--fs-section-title, 2.4rem);
   font-weight: 850;
   line-height: 1.06;
   letter-spacing: -0.035em;
@@ -354,7 +354,7 @@
   margin-top: 0.65rem;
   color: var(--text, #21372a);
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: var(--fs-section-title, 2.4rem);
   font-weight: 850;
   line-height: 1.06;
   letter-spacing: -0.035em;

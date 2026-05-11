@@ -37,13 +37,13 @@
 
 .introGrid p {
   color: var(--color-text-muted);
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
 .introGrid p:last-child {
   color: var(--color-text-soft);
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .faqGrid {
@@ -88,7 +88,7 @@
 .answerBlock p,
 .answerBlockThai p {
   color: var(--color-text-muted);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
@@ -99,13 +99,13 @@
 
 .answerBlockThai h3 {
   color: var(--color-accent-strong);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.45;
 }
 
 .answerBlockThai p {
   color: var(--color-text-soft);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .cta {
@@ -133,7 +133,7 @@
   width: 100%;
   margin-top: 12px;
   color: var(--color-text-muted);
-  font-size: 17px;
+  font-size: 1rem;
   line-height: 1.7;
 }
 

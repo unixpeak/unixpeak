@@ -62,7 +62,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.container}`}>
         <div className={styles.top}>
-          <Link href="/" className={styles.brand} aria-label="Unix Peak Travel home">
+          <Link href="/#top" className={styles.brand} aria-label="Unix Peak Travel home">
             <Image
               className={styles.logo}
               src="/logo/unixpeak-logo.svg"

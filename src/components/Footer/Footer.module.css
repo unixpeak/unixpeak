@@ -47,7 +47,7 @@
 }
 
 .logo {
-  width: min(220px, 58vw);
+  width: min(8rem, 42vw);
   height: auto;
   object-fit: contain;
 }
@@ -55,7 +55,7 @@
 .description {
   width: 100%;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.72;
 }
 

@@ -40,7 +40,7 @@
 .descriptionTh {
   width: 100%;
   color: var(--color-text-muted);
-  font-size: 17px;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
@@ -93,7 +93,7 @@
 
 .cardText {
   color: var(--color-text-muted);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -219,7 +219,7 @@
 @media (max-width: 620px) {
   .description,
   .descriptionTh {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .embedWrap,

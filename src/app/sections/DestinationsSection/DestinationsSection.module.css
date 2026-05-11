@@ -50,7 +50,7 @@
 
 .destinations span {
   color: var(--color-text);
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 850;
 }
 

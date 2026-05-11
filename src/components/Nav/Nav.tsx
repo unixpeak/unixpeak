@@ -26,7 +26,7 @@ export function Nav() {
         <div className={styles.inner}>
           <Link
             className={styles.brand}
-            href="/"
+            href="/#top"
             aria-label={`${siteInfo.companyName} home`}
             onClick={closeMenu}
           >
@@ -49,7 +49,9 @@ export function Nav() {
             {siteInfo.mainNavigation.map((link) => (
               <Link
                 className={`${styles.navLink} ${
-                  pathname === link.href ? styles.activeLink : ""
+                  pathname === link.href || (pathname === "/" && link.href === "/#top")
+                    ? styles.activeLink
+                    : ""
                 }`}
                 href={link.href}
                 key={link.href}
@@ -119,7 +121,9 @@ export function Nav() {
           {siteInfo.mainNavigation.map((link) => (
             <Link
               className={`${styles.drawerLink} ${
-                pathname === link.href ? styles.drawerActiveLink : ""
+                pathname === link.href || (pathname === "/" && link.href === "/#top")
+                  ? styles.drawerActiveLink
+                  : ""
               }`}
               href={link.href}
               key={link.href}
