@@ -36,7 +36,7 @@ export const tours: Tour[] = [
     location: 'Ayutthaya, Thailand',
     groupSize: 'Join-in group tour',
     price: 'Start from 1,500 THB / person',
-    image: '/images/tours/bangkok-tour.png',
+    image: '/images/tours/ayutthaya-day-tour-from-bangkok.png',
     highlights: [
       'Visit Wat Chaiwatthanaram',
       'See the reclining Buddha at Wat Lokayasutha',
@@ -83,7 +83,7 @@ export const tours: Tour[] = [
     location: 'Ratchaburi, Thailand',
     groupSize: 'Join-in group tour',
     price: 'Start from 800 THB / person',
-    image: '/images/tours/thailand-trip.png',
+    image: '/images/tours/damnoen-saduak-floating-market-tour-from-bangkok.png',
     highlights: [
       'Visit Damnoen Saduak Floating Market',
       'Stop at a traditional Thai house',
@@ -131,7 +131,7 @@ export const tours: Tour[] = [
     location: 'Bangkok, Thailand',
     groupSize: 'Private tour',
     price: 'Start from 3,500 THB / person',
-    image: '/images/tours/bangkok-tour.png',
+    image: '/images/tours/grand-palace-wat-pho-wat-pho-private-tour-bangkok.png',
     highlights: [
       'Visit the Grand Palace',
       'See the Emerald Buddha',

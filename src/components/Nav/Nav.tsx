@@ -41,7 +41,6 @@ export function Nav() {
           </span>
           <span>
             <span className={styles.brandName}>{siteInfo.companyName}</span>
-            <span className={styles.brandTagline}>Thailand travel planner</span>
           </span>
         </Link>
 
