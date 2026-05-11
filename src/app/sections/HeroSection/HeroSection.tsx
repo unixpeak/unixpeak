@@ -44,9 +44,7 @@ export default function HeroSection({ companyName }: HeroSectionProps) {
             <p className={styles.kicker}>UNIXPEAK TRAVEL</p>
 
             <h1 className={styles.title}>
-              Thailand tours,
-              <br />
-              private trips and MICE
+              Thailand tours, private trips and MICE
             </h1>
 
             <p className={styles.desc}>
