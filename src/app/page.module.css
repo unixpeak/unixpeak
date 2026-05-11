@@ -1,11 +1,5 @@
 .page {
   display: grid;
-  gap: var(--layout-section);
+  gap: 2rem;
   padding-bottom: var(--layout-section);
-}
-
-@media (max-width: 620px) {
-  .page {
-    gap: 56px;
-  }
 }

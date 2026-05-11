@@ -9,7 +9,7 @@
 
   --container: 1280px;
   --pad-x: 2rem;
-  --section-y: 4rem;
+  --section-y: 2.75rem;
   --scroll-offset: 86px;
 
   --font-display: 'Merriweather', 'Noto Sans Thai', 'Prompt', serif;
@@ -217,22 +217,22 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4.2vw, 4.1rem);
+  font-size: 3.2rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.85rem, 4vw, 3.35rem);
+  font-size: 2.65rem;
   font-weight: 700;
 }
 
 h3 {
-  font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+  font-size: 1.75rem;
   font-weight: 600;
 }
 
 h4 {
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
@@ -249,7 +249,7 @@ b {
 }
 
 small {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--muted);
 }
 
@@ -457,7 +457,7 @@ li {
   width: fit-content;
 
   color: var(--accent-strong);
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -499,7 +499,7 @@ li {
 
   :root {
     --scroll-offset: 78px;
-    --section-y: 3.25rem;
+    --section-y: 2.35rem;
   }
 }
 
@@ -511,7 +511,7 @@ li {
   :root {
     --pad-x: 1rem;
     --scroll-offset: 72px;
-    --section-y: 2.75rem;
+    --section-y: 2rem;
   }
 
   .DW768-display-none {
@@ -525,7 +525,7 @@ li {
 
 @media (max-width: 426px) {
   html {
-    font-size: 15.5px;
+    font-size: 16px;
   }
 
   :root {
@@ -535,6 +535,6 @@ li {
 
 @media (max-width: 376px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
 }

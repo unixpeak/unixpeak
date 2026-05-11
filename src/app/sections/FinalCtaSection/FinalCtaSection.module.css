@@ -9,21 +9,21 @@
   border-radius: var(--radius-lg);
   background: var(--color-accent-soft);
   box-shadow: var(--shadow-card);
-  padding-top: 36px;
+  padding-top: 28px;
   padding-right: var(--layout-gutter);
-  padding-bottom: 36px;
+  padding-bottom: 28px;
   padding-left: var(--layout-gutter);
 }
 
 .finalCta > div:first-child {
   display: grid;
-  max-width: 760px;
+  width: 100%;
   gap: 12px;
 }
 
 .eyebrow {
   color: var(--color-accent-strong);
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -31,7 +31,7 @@
 
 .finalCta h2 {
   color: var(--color-text);
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: 2.4rem;
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -57,7 +57,7 @@
   justify-content: center;
   min-height: 46px;
   border-radius: var(--radius-pill);
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 800;
   line-height: 1.25;
   padding: 0 20px;
@@ -98,7 +98,7 @@
 
 .textLink {
   color: var(--color-accent-strong);
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 850;
 }
 
