@@ -57,10 +57,10 @@ export const faqItems: FaqItem[] = [
   {
     question: "How do I contact Unix Peak Travel or make a payment inquiry?",
     answer:
-      "You can contact us by phone, WhatsApp, LINE OA, Facebook, or Instagram. For payment details, package quotation, and booking confirmation, please contact the team directly so we can confirm the latest program and availability.",
+      "You can contact us by phone, WhatsApp, LINE OA, Facebook, or Instagram. We accept bank transfer and Wise. Payment details are provided after the itinerary, quotation, availability, and booking details are confirmed.",
     questionTh: "ติดต่อ Unix Peak Travel หรือสอบถามการชำระเงินได้อย่างไร?",
     answerTh:
-      "ติดต่อได้ทางโทรศัพท์ WhatsApp, LINE OA, Facebook หรือ Instagram หากต้องการรายละเอียดการชำระเงิน ใบเสนอราคา หรือยืนยันการจอง กรุณาติดต่อทีมงานโดยตรงเพื่อตรวจสอบข้อมูลล่าสุด",
+      "ติดต่อได้ทางโทรศัพท์ WhatsApp, LINE OA, Facebook หรือ Instagram รองรับการชำระเงินผ่านการโอนธนาคารและ Wise โดยทีมงานจะแจ้งรายละเอียดหลังยืนยันโปรแกรม ราคา วันเดินทาง และข้อมูลการจอง",
   },
   {
     question: "Is Unix Peak Travel licensed by TAT?",

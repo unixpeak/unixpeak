@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ContactsBox, type ContactBoxLink } from "@/components/ContactsBox/ContactsBox";
+import { paymentMethods } from "@/data/payments";
 import { siteInfo } from "@/data/site";
 import styles from "./Footer.module.css";
 
@@ -95,6 +96,24 @@ export function Footer() {
             >
               LINE OA {siteInfo.contact.lineOA}
             </a>
+          </div>
+
+          <div className={styles.payments} aria-label="Accepted payment methods">
+            <span className={styles.paymentLabel}>Payment</span>
+            <ul className={styles.paymentList}>
+              {paymentMethods.map((method) => (
+                <li className={styles.paymentItem} key={method.name}>
+                  <Image
+                    className={styles.paymentIcon}
+                    src={method.icon}
+                    alt=""
+                    width={28}
+                    height={28}
+                  />
+                  <span>{method.name}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

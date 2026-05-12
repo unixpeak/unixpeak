@@ -79,6 +79,53 @@
   color: var(--accent-strong);
 }
 
+.payments {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.64);
+  padding: 8px 12px;
+}
+
+.paymentLabel {
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.paymentList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.paymentItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.paymentIcon {
+  width: 1.55rem;
+  height: 1.55rem;
+  object-fit: contain;
+}
+
 .meta {
   display: flex;
   align-items: center;

@@ -1,0 +1,66 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .outline {
+        stroke: #333333;
+        stroke-width: 17;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .bank {
+        fill: #d9ecee;
+      }
+
+      .arrow {
+        fill: #43b39f;
+      }
+    </style>
+  </defs>
+
+  <!-- Top-left bank roof -->
+  <path
+    class="bank outline"
+    d="M9 99L117 13C123 8 132 8 138 13L247 99V120H9Z"
+  />
+
+  <!-- Top-left bank columns -->
+  <rect class="bank outline" x="26" y="120" width="32" height="102" />
+  <rect class="bank outline" x="112" y="120" width="32" height="102" />
+  <rect class="bank outline" x="198" y="120" width="32" height="102" />
+
+  <!-- Top-left bank base -->
+  <path
+    class="bank outline"
+    d="M17 222H239C244 222 247 226 247 231V256C247 261 244 265 239 265H17C12 265 9 261 9 256V231C9 226 12 222 17 222Z"
+  />
+
+  <!-- Top-right arrow -->
+  <path
+    class="arrow outline"
+    d="M359 59V102H385C432 102 471 140 481 186C482 192 475 196 471 190C448 162 419 145 385 145H359V181L299 120Z"
+  />
+
+  <!-- Bottom-left arrow -->
+  <path
+    class="arrow outline"
+    d="M153 453V410H127C80 410 41 372 31 326C30 320 37 316 41 322C64 350 93 367 127 367H153V331L213 392Z"
+  />
+
+  <!-- Bottom-right bank roof -->
+  <path
+    class="bank outline"
+    d="M265 339L373 253C379 248 388 248 394 253L503 339V360H265Z"
+  />
+
+  <!-- Bottom-right bank columns -->
+  <rect class="bank outline" x="282" y="360" width="32" height="102" />
+  <rect class="bank outline" x="368" y="360" width="32" height="102" />
+  <rect class="bank outline" x="454" y="360" width="32" height="102" />
+
+  <!-- Bottom-right bank base -->
+  <path
+    class="bank outline"
+    d="M273 462H495C500 462 503 466 503 471V496C503 501 500 505 495 505H273C268 505 265 501 265 496V471C265 466 268 462 273 462Z"
+  />
+</svg>
