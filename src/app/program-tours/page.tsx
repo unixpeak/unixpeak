@@ -76,7 +76,7 @@ export default function ProgramToursPage() {
                 src={tour.image}
                 alt={`${tour.title} travel program by Unix Peak Travel`}
                 fill
-                sizes="(max-width: 760px) 100vw, (max-width: 1100px) 42vw, 36vw"
+                sizes="(max-width: 760px) 100vw, (max-width: 1400px) 50vw, 33vw"
               />
             </Link>
 

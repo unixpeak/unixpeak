@@ -10,6 +10,8 @@ type FeaturedToursSectionProps = {
 export default function FeaturedToursSection({
   tours,
 }: FeaturedToursSectionProps) {
+  const featuredTours = tours.slice(0, 3)
+
   return (
     <section className={styles.section} aria-labelledby="featured-tours-title">
       <div className={styles.sectionHeader}>
@@ -26,7 +28,7 @@ export default function FeaturedToursSection({
       </div>
 
       <div className={styles.tourGrid}>
-        {tours.map((tour) => (
+        {featuredTours.map((tour) => (
           <article className={styles.tourCard} key={tour.slug}>
             <Link
               className={styles.imageLink}
@@ -85,6 +87,12 @@ export default function FeaturedToursSection({
             </div>
           </article>
         ))}
+      </div>
+
+      <div className={styles.sectionActions}>
+        <Link className={styles.allToursLink} href="/program-tours">
+          View all Program Tours
+        </Link>
       </div>
     </section>
   )

@@ -1,8 +1,10 @@
 import { siteInfo } from '@/data/site'
 import { tours } from '@/data/tours'
+import { travelVideos } from '@/data/videos'
 import HeroSection from './sections/HeroSection/HeroSection'
 import ServicesSection from './sections/ServicesSection/ServicesSection'
 import FeaturedToursSection from './sections/FeaturedToursSection/FeaturedToursSection'
+import VideoHighlightsSection from './sections/VideoHighlightsSection/VideoHighlightsSection'
 import WhyChooseSection from './sections/WhyChooseSection/WhyChooseSection'
 import FinalCtaSection from './sections/FinalCtaSection/FinalCtaSection'
 import SocialmediaSection from './sections/SocialmediaSection/SocialmediaSection'
@@ -64,6 +66,8 @@ export default function PageClient() {
       <ServicesSection services={services} />
 
       <FeaturedToursSection tours={featuredTours} />
+
+      <VideoHighlightsSection videos={travelVideos} />
 
       <SocialmediaSection
         facebookHref={facebookLink}
