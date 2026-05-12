@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Script from 'next/script'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import styles from './SocialmediaSection.module.css'
 
 declare global {
@@ -31,6 +31,7 @@ export default function SocialmediaSection({
   instagramHref,
 }: SocialmediaSectionProps) {
   const facebookRef = useRef<HTMLDivElement | null>(null)
+  const instagramRef = useRef<HTMLQuoteElement | null>(null)
   const [facebookWidth, setFacebookWidth] = useState(420)
   const [shouldLoadEmbeds, setShouldLoadEmbeds] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
@@ -67,10 +68,22 @@ export default function SocialmediaSection({
     return () => window.removeEventListener('load', loadEmbeds)
   }, [])
 
+  const processInstagramEmbeds = useCallback(() => {
+    if (!shouldLoadEmbeds || !instagramRef.current) return
+
+    const process = () => window.instgrm?.Embeds?.process?.()
+
+    window.requestAnimationFrame(() => {
+      process()
+      window.setTimeout(process, 300)
+      window.setTimeout(process, 1200)
+    })
+  }, [shouldLoadEmbeds])
+
   useEffect(() => {
     if (!shouldLoadEmbeds || !scriptLoaded) return
-    window.instgrm?.Embeds?.process?.()
-  }, [shouldLoadEmbeds, scriptLoaded])
+    processInstagramEmbeds()
+  }, [shouldLoadEmbeds, scriptLoaded, processInstagramEmbeds])
 
   const facebookEmbedSrc = useMemo(() => {
     const href = encodeURIComponent(facebookHref)
@@ -157,10 +170,20 @@ export default function SocialmediaSection({
             <div className={styles.embedWrap}>
               {shouldLoadEmbeds ? (
                 <blockquote
+                  ref={instagramRef}
                   className="instagram-media"
                   data-instgrm-permalink={instagramUrl}
                   data-instgrm-version="14"
-                />
+                >
+                  <a
+                    className={styles.instagramFallback}
+                    href={instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open Instagram @unixpeak.thailand
+                  </a>
+                </blockquote>
               ) : (
                 <div className={styles.socialPlaceholder} aria-hidden="true">
                   <span>Instagram</span>
@@ -188,11 +211,16 @@ export default function SocialmediaSection({
 
       {shouldLoadEmbeds ? (
         <Script
+          id="instagram-embed-script"
           src="https://www.instagram.com/embed.js"
           strategy="afterInteractive"
           onLoad={() => {
             setScriptLoaded(true)
-            window.instgrm?.Embeds?.process?.()
+            processInstagramEmbeds()
+          }}
+          onReady={() => {
+            setScriptLoaded(true)
+            processInstagramEmbeds()
           }}
         />
       ) : null}
