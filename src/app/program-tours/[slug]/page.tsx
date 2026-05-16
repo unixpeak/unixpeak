@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { siteInfo } from '@/data/site'
-import { getTourBySlug, tours } from '@/data/tours'
+import { getPackageCategory, getTourBySlug, tours } from '@/data/tours'
 import styles from './page.module.css'
 
 type TourPageProps = {
@@ -30,9 +30,13 @@ export async function generateMetadata({
     }
   }
 
+  const category = getPackageCategory(tour.category)
+
   return {
     title: tour.seoTitle,
     description: tour.seoDescription,
+    keywords: tour.tags,
+    category: category.label,
     alternates: {
       canonical: `/program-tours/${tour.slug}`,
     },
@@ -59,6 +63,7 @@ export default async function TourDetailPage({ params }: TourPageProps) {
   }
 
   const whatsappNumber = siteInfo.contact.whatsapp.replace(/\D/g, '')
+  const category = getPackageCategory(tour.category)
   const lineLink =
     siteInfo.socialLinks.find((link) => link.label === 'LINE OA')?.href ??
     `https://line.me/ti/p/~${siteInfo.contact.lineOA}`
@@ -72,9 +77,9 @@ export default async function TourDetailPage({ params }: TourPageProps) {
       <article className={styles.article}>
         <section className={styles.hero}>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>{tour.location}</p>
+            <p className={styles.eyebrow}>{category.label}</p>
 
-            <h3>{tour.title}</h3>
+            <h1>{tour.title}</h1>
 
             <p className={styles.titleTh} lang="th">
               {tour.titleTh}
@@ -100,6 +105,15 @@ export default async function TourDetailPage({ params }: TourPageProps) {
                 <dd>{tour.location}</dd>
               </div>
             </dl>
+
+            <div
+              className={styles.tagList}
+              aria-label={`${tour.title} keywords`}
+            >
+              {tour.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
           </div>
 
           <div className={styles.heroImageWrap}>

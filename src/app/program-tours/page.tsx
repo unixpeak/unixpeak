@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { siteInfo } from '@/data/site'
-import { tours } from '@/data/tours'
+import { getPackageCategory, packageCategories, tours } from '@/data/tours'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
@@ -22,6 +22,10 @@ export const metadata: Metadata = {
 
 export default function ProgramToursPage() {
   const whatsappNumber = siteInfo.contact.whatsapp.replace(/\D/g, '')
+  const categorySummaries = packageCategories.map((category) => ({
+    ...category,
+    count: tours.filter((tour) => tour.category === category.id).length,
+  }))
 
   return (
     <main className={styles.page}>
@@ -63,83 +67,126 @@ export default function ProgramToursPage() {
         </div>
       </section>
 
-      <section className={styles.tourList} aria-label="All program tours">
-        {tours.map((tour) => (
-          <article className={styles.tourCard} key={tour.slug}>
-            <Link
-              className={styles.imageLink}
-              href={`/program-tours/${tour.slug}`}
-              aria-label={`View ${tour.title}`}
+      <section
+        className={styles.categoryPanel}
+        aria-label="Package categories"
+      >
+        <div className={styles.categoryHeader}>
+          <p className={styles.eyebrow}>Package categories</p>
+
+          <h2>Tour programs grouped for easy planning</h2>
+
+          <p>
+            Each program has one main category and focused keywords such as
+            province, destination, activity, and travel style.
+          </p>
+        </div>
+
+        <div className={styles.categoryGrid}>
+          {categorySummaries.map((category) => (
+            <span
+              className={`${styles.categoryChip} ${
+                category.count === 0 ? styles.categoryChipEmpty : ''
+              }`}
+              key={category.id}
             >
-              <Image
-                className={styles.tourImage}
-                src={tour.image}
-                alt={`${tour.title} travel program by Unix Peak Travel`}
-                fill
-                sizes="(max-width: 760px) 100vw, (max-width: 1400px) 50vw, 33vw"
-              />
-            </Link>
+              <span>{category.label}</span>
+              <strong>{category.count}</strong>
+            </span>
+          ))}
+        </div>
+      </section>
 
-            <div className={styles.cardContent}>
-              <div className={styles.cardTop}>
-                <div>
-                  <p className={styles.cardEyebrow}>{tour.location}</p>
+      <section className={styles.tourList} aria-label="All program tours">
+        {tours.map((tour) => {
+          const category = getPackageCategory(tour.category)
 
-                  <h2>
-                    <Link href={`/program-tours/${tour.slug}`}>
-                      {tour.title}
-                    </Link>
-                  </h2>
-
-                  <p className={styles.titleTh} lang="th">
-                    {tour.titleTh}
-                  </p>
-                </div>
-
-                <p className={styles.price}>{tour.price}</p>
-              </div>
-
-              <div className={styles.copy}>
-                <p>{tour.excerpt}</p>
-                <p lang="th">{tour.excerptTh}</p>
-              </div>
-
-              <dl className={styles.facts}>
-                <div>
-                  <dt>Duration</dt>
-                  <dd>{tour.duration}</dd>
-                </div>
-
-                <div>
-                  <dt>Type</dt>
-                  <dd>{tour.groupSize}</dd>
-                </div>
-
-                <div>
-                  <dt>Area</dt>
-                  <dd>{tour.location}</dd>
-                </div>
-              </dl>
-
-              <div className={styles.highlights}>
-                <h3>Highlights</h3>
-
-                <ul>
-                  {tour.highlights.slice(0, 3).map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
-              </div>
-
+          return (
+            <article className={styles.tourCard} key={tour.slug}>
               <Link
-                className={styles.detailsLink}
+                className={styles.imageLink}
                 href={`/program-tours/${tour.slug}`}
+                aria-label={`View ${tour.title}`}
               >
-                View tour details
+                <Image
+                  className={styles.tourImage}
+                  src={tour.image}
+                  alt={`${tour.title} travel program by Unix Peak Travel`}
+                  fill
+                  sizes="(max-width: 760px) 100vw, (max-width: 1400px) 50vw, 33vw"
+                />
               </Link>
-            </div>
-          </article>
-        ))}
+
+              <div className={styles.cardContent}>
+                <div className={styles.cardTop}>
+                  <div>
+                    <p className={styles.cardEyebrow}>{category.label}</p>
+
+                    <h2>
+                      <Link href={`/program-tours/${tour.slug}`}>
+                        {tour.title}
+                      </Link>
+                    </h2>
+
+                    <p className={styles.titleTh} lang="th">
+                      {tour.titleTh}
+                    </p>
+                  </div>
+
+                  <p className={styles.price}>{tour.price}</p>
+                </div>
+
+                <div className={styles.copy}>
+                  <p>{tour.excerpt}</p>
+                  <p lang="th">{tour.excerptTh}</p>
+                </div>
+
+                <div
+                  className={styles.tags}
+                  aria-label={`${tour.title} keywords`}
+                >
+                  {tour.tags.slice(0, 6).map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <dl className={styles.facts}>
+                  <div>
+                    <dt>Duration</dt>
+                    <dd>{tour.duration}</dd>
+                  </div>
+
+                  <div>
+                    <dt>Type</dt>
+                    <dd>{tour.groupSize}</dd>
+                  </div>
+
+                  <div>
+                    <dt>Area</dt>
+                    <dd>{tour.location}</dd>
+                  </div>
+                </dl>
+
+                <div className={styles.highlights}>
+                  <h3>Highlights</h3>
+
+                  <ul>
+                    {tour.highlights.slice(0, 3).map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link
+                  className={styles.detailsLink}
+                  href={`/program-tours/${tour.slug}`}
+                >
+                  View tour details
+                </Link>
+              </div>
+            </article>
+          )
+        })}
       </section>
 
       <section className={styles.cta}>
