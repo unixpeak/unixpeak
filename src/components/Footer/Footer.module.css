@@ -112,7 +112,7 @@
 .paymentItem {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.38rem;
   color: var(--text);
   font-size: 1rem;
   font-weight: 750;
@@ -124,6 +124,15 @@
   width: 1.55rem;
   height: 1.55rem;
   object-fit: contain;
+}
+
+.wiseLogo {
+  width: 4.4rem;
+  height: 2.45rem;
+  overflow: hidden;
+  border: 1px solid rgba(11, 42, 0, 0.08);
+  border-radius: 0.5rem;
+  background: #9fe870;
 }
 
 .meta {

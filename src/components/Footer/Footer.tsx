@@ -101,18 +101,24 @@ export function Footer() {
           <div className={styles.payments} aria-label="Accepted payment methods">
             <span className={styles.paymentLabel}>Payment</span>
             <ul className={styles.paymentList}>
-              {paymentMethods.map((method) => (
-                <li className={styles.paymentItem} key={method.name}>
-                  <Image
-                    className={styles.paymentIcon}
-                    src={method.icon}
-                    alt=""
-                    width={28}
-                    height={28}
-                  />
-                  <span>{method.name}</span>
-                </li>
-              ))}
+              {paymentMethods.map((method) => {
+                const isWise = method.name === "Wise";
+
+                return (
+                  <li className={styles.paymentItem} key={method.name}>
+                    <Image
+                      className={`${styles.paymentIcon} ${
+                        isWise ? styles.wiseLogo : ""
+                      }`}
+                      src={method.icon}
+                      alt={isWise ? "Wise" : ""}
+                      width={isWise ? 84 : 28}
+                      height={isWise ? 47 : 28}
+                    />
+                    {isWise ? null : <span>{method.name}</span>}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
