@@ -1,0 +1,107 @@
+.destinationsSection {
+  display: grid;
+  gap: 1.3rem;
+  border-top: 1px solid var(--border-soft);
+  padding-top: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 45rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgba(0, 169, 157, 0.18);
+  border-radius: var(--radius-pill);
+  background: rgba(0, 169, 157, 0.09);
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 0.48rem 0.72rem;
+}
+
+.sectionHeader h2 {
+  font-size: clamp(2rem, 4vw, var(--fs-section-title));
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.destinationList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  padding: 0;
+  list-style: none;
+}
+
+.destinationItem {
+  position: relative;
+  overflow: hidden;
+  min-height: 8rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+  transition:
+    transform var(--t-fast),
+    border-color var(--t-fast),
+    box-shadow var(--t-fast),
+    background-color var(--t-fast);
+}
+
+.destinationItem:hover {
+  border-color: rgba(0, 169, 157, 0.22);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.destinationItem::after {
+  content: "";
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1.8rem;
+  width: 6.5rem;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: var(--accent-soft);
+}
+
+.destinationItem span,
+.destinationItem small {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.destinationItem span {
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.destinationItem small {
+  margin-top: 0.4rem;
+  color: var(--muted-2);
+}
+
+@media (max-width: 1024px) {
+  .destinationList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .destinationList {
+    grid-template-columns: 1fr;
+  }
+}

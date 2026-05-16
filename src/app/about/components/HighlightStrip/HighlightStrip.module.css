@@ -1,0 +1,46 @@
+.highlightStrip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.highlightCard {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 8rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+}
+
+.highlightCard strong {
+  color: var(--accent-strong);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1;
+}
+
+.highlightCard span {
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.highlightCard small {
+  align-self: end;
+  color: var(--muted-2);
+  line-height: 1.45;
+}
+
+@media (max-width: 1024px) {
+  .highlightStrip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .highlightStrip {
+    grid-template-columns: 1fr;
+  }
+}
