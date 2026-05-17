@@ -7,6 +7,7 @@
 
 .hero,
 .categoryPanel,
+.tourListHeader,
 .tourList,
 .cta {
   width: min(100%, var(--container, 64rem));
@@ -145,6 +146,7 @@
 }
 
 .categoryChip {
+  appearance: none;
   display: inline-flex;
   max-width: 100%;
   align-items: center;
@@ -153,10 +155,19 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.82);
   color: var(--accent-strong, #1f7449);
+  cursor: pointer;
+  font-family: inherit;
   padding: 0.55rem 0.7rem 0.55rem 0.85rem;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.25;
+  text-align: left;
+  transition:
+    transform var(--t-fast, 160ms ease),
+    border-color var(--t-med, 220ms ease),
+    background var(--t-med, 220ms ease),
+    color var(--t-med, 220ms ease),
+    box-shadow var(--t-med, 220ms ease);
 }
 
 .categoryChip span {
@@ -176,9 +187,71 @@
   line-height: 1;
 }
 
+.categoryChip:not(:disabled):hover {
+  transform: translateY(-2px);
+  border-color: rgba(47, 143, 91, 0.36);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(33, 55, 42, 0.1);
+}
+
+.categoryChip:focus-visible {
+  outline: 3px solid rgba(47, 143, 91, 0.28);
+  outline-offset: 3px;
+}
+
+.categoryChipActive {
+  border-color: var(--accent, #2f8f5b);
+  background: var(--accent, #2f8f5b);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(47, 143, 91, 0.2);
+}
+
+.categoryChipActive strong {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
 .categoryChipEmpty {
   color: var(--muted, #64736a);
+  cursor: not-allowed;
   opacity: 0.72;
+}
+
+.tourListHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tourListHeader h2 {
+  margin-top: 0.5rem;
+  color: var(--text, #21372a);
+  font-family: var(--font-display);
+  font-size: var(--fs-section-title, 2.4rem);
+  font-weight: 850;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.tourListHeader > p {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid rgba(47, 143, 91, 0.16);
+  border-radius: 999px;
+  background: var(--accent-soft, rgba(47, 143, 91, 0.12));
+  color: var(--accent-strong, #1f7449);
+  padding: 0.6rem 0.85rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.tourListHeader strong {
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .tourList {
@@ -549,6 +622,11 @@
 
   .heroPanel {
     grid-template-columns: 1fr;
+  }
+
+  .tourListHeader {
+    display: grid;
+    align-items: start;
   }
 
   .facts div + div {
