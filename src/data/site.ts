@@ -101,6 +101,11 @@ export const siteInfo: SiteInfo = {
       href: '/program-tours',
     },
     {
+      label: 'Tour Packages',
+      labelTh: 'à¹à¸žà¹‡à¸à¹€à¸à¸ˆà¸—à¸±à¸§à¸£à¹Œ',
+      href: '/tour-packages',
+    },
+    {
       label: 'About Us',
       labelTh: 'เกี่ยวกับเรา',
       href: '/about',
