@@ -90,7 +90,7 @@ export function Footer() {
               WhatsApp {siteInfo.contact.whatsapp}
             </a>
             <a
-              href={line?.href ?? `https://line.me/ti/p/~${siteInfo.contact.lineOA}`}
+              href={line?.href ?? "https://line.me/R/ti/p/@703ufvoq"}
               target="_blank"
               rel="noreferrer"
             >

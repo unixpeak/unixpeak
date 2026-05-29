@@ -32,7 +32,7 @@ export default function ContactPage() {
   const whatsappHref = `https://wa.me/${siteInfo.contact.whatsapp.replace("+", "")}`;
   const lineHref =
     siteInfo.socialLinks.find((link) => link.label === "LINE OA")?.href ??
-    `https://line.me/ti/p/~${siteInfo.contact.lineOA}`;
+    "https://line.me/R/ti/p/@703ufvoq";
 
   return (
     <div className={styles.page}>

@@ -51,7 +51,7 @@ export default function PageClient() {
 
   const lineLink =
     siteInfo.socialLinks.find((link) => link.label === 'LINE OA')?.href ??
-    `https://line.me/ti/p/~${siteInfo.contact.lineOA}`
+    'https://line.me/R/ti/p/@703ufvoq'
   const facebookLink =
     siteInfo.socialLinks.find((link) => link.label === 'Facebook')?.href ??
     'https://www.facebook.com/UnixPeak'

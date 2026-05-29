@@ -108,7 +108,7 @@ export default async function TourPackagesPage() {
   const stats = getPackageStats(packageData.packages)
   const lineLink =
     siteInfo.socialLinks.find((link) => link.label === 'LINE OA')?.href ??
-    `https://line.me/ti/p/~${siteInfo.contact.lineOA}`
+    'https://line.me/R/ti/p/@703ufvoq'
   const sourceMessages = packageData.sources.filter(
     (source) => source.status !== 'ready',
   )

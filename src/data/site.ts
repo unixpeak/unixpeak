@@ -65,7 +65,7 @@ export const siteInfo: SiteInfo = {
       },
     ],
     whatsapp: '+66995936529',
-    lineOA: 'unixpeak88',
+    lineOA: '@703ufvoq',
   },
   socialLinks: [
     {
@@ -80,8 +80,8 @@ export const siteInfo: SiteInfo = {
     },
     {
       label: 'LINE OA',
-      value: 'unixpeak88',
-      href: 'https://line.me/ti/p/~unixpeak88',
+      value: '@703ufvoq',
+      href: 'https://line.me/R/ti/p/@703ufvoq',
     },
     {
       label: 'WhatsApp',

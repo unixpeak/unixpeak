@@ -66,7 +66,7 @@ export default async function TourDetailPage({ params }: TourPageProps) {
   const category = getPackageCategory(tour.category)
   const lineLink =
     siteInfo.socialLinks.find((link) => link.label === 'LINE OA')?.href ??
-    `https://line.me/ti/p/~${siteInfo.contact.lineOA}`
+    'https://line.me/R/ti/p/@703ufvoq'
 
   return (
     <main className={styles.page}>
