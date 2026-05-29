@@ -325,6 +325,7 @@
 }
 
 .packageCard {
+  height: fit-content;
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: hidden;

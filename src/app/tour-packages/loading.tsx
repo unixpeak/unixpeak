@@ -2,14 +2,14 @@ import styles from './page.module.css'
 
 export default function TourPackagesLoading() {
   return (
-    <div className={styles.page}>
+    <div className={styles.page} lang="th">
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>Live Tour Packages</p>
-          <h1>Loading supplier packages</h1>
+          <p className={styles.eyebrow}>Tour Packages</p>
+          <h1>กำลังโหลดแพ็กเกจทัวร์ต่างประเทศ</h1>
           <p>
-            Fetching live departures, seats, prices, flights, and itinerary
-            previews.
+            กำลังดึงข้อมูลวันเดินทาง ที่นั่ง ราคา ไฟลต์ และโปรแกรมทัวร์จาก
+            supplier
           </p>
         </div>
 
@@ -21,7 +21,7 @@ export default function TourPackagesLoading() {
         </div>
       </section>
 
-      <section className={styles.loadingGrid} aria-label="Loading packages">
+      <section className={styles.loadingGrid} aria-label="กำลังโหลดแพ็กเกจ">
         {Array.from({ length: 6 }).map((_, index) => (
           <div className={styles.loadingCard} key={index}>
             <span />

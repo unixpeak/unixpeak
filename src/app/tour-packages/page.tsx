@@ -13,16 +13,16 @@ import { TourPackagesExplorer } from './TourPackagesExplorer'
 import styles from './page.module.css'
 
 export const metadata: Metadata = {
-  title: 'Tour Packages',
+  title: 'แพ็กเกจทัวร์ต่างประเทศ',
   description:
-    'Live international tour packages with departure dates, seats, prices, flights, itineraries, and PDF programs from Unix Peak Travel.',
+    'แพ็กเกจทัวร์ต่างประเทศพร้อมวันเดินทาง ที่นั่ง ราคา ไฟลต์ โปรแกรมเดินทาง และไฟล์ PDF จาก Unix Peak Travel.',
   alternates: {
     canonical: '/tour-packages',
   },
   openGraph: {
-    title: 'Tour Packages | Unix Peak Travel',
+    title: 'แพ็กเกจทัวร์ต่างประเทศ | Unix Peak Travel',
     description:
-      'Browse live travel packages with dates, seats, prices, flights, itineraries, and downloadable program files.',
+      'เลือกแพ็กเกจทัวร์ต่างประเทศพร้อมวันเดินทาง ที่นั่ง ราคา ไฟลต์ โปรแกรมเดินทาง และไฟล์ PDF.',
     url: '/tour-packages',
   },
 }
@@ -35,7 +35,7 @@ function formatNumber(value: number) {
 
 function formatDateTime(value: string) {
   if (!value) {
-    return 'Not available'
+    return 'ยังไม่มีข้อมูล'
   }
 
   const normalizedValue = value.includes('T')
@@ -49,7 +49,7 @@ function formatDateTime(value: string) {
     return value
   }
 
-  return new Intl.DateTimeFormat('en-GB', {
+  return new Intl.DateTimeFormat('th-TH', {
     dateStyle: 'medium',
     timeStyle: 'short',
     timeZone: 'Asia/Bangkok',
@@ -58,7 +58,7 @@ function formatDateTime(value: string) {
 
 function formatDate(value: string) {
   if (!value) {
-    return 'Date TBC'
+    return 'รอวันเดินทาง'
   }
 
   const date = new Date(`${value}T00:00:00+07:00`)
@@ -67,7 +67,7 @@ function formatDate(value: string) {
     return value
   }
 
-  return new Intl.DateTimeFormat('en-GB', {
+  return new Intl.DateTimeFormat('th-TH', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
@@ -106,90 +106,92 @@ export default async function TourPackagesPage() {
   const packageData = await getTourPackages()
   const initialPackagePage = queryTourPackages(packageData.packages)
   const stats = getPackageStats(packageData.packages)
-  const whatsappNumber = siteInfo.contact.whatsapp.replace(/\D/g, '')
+  const lineLink =
+    siteInfo.socialLinks.find((link) => link.label === 'LINE OA')?.href ??
+    `https://line.me/ti/p/~${siteInfo.contact.lineOA}`
   const sourceMessages = packageData.sources.filter(
     (source) => source.status !== 'ready',
   )
 
   return (
-    <div className={styles.page}>
+    <div className={styles.page} lang="th">
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>Live Tour Packages</p>
+          <p className={styles.eyebrow}>Tour Packages</p>
 
-          <h1>Ready package data from trusted travel suppliers</h1>
+          <h1>แพ็กเกจทัวร์ต่างประเทศพร้อมเลือกวันเดินทาง</h1>
 
           <p>
-            Browse live departures with prices, seat availability, flights,
-            itinerary previews, and downloadable program files. ZegoAPI is the
-            first connected source, with room to add more suppliers later.
+            รวมแพ็กเกจจาก supplier ที่อัปเดตข้อมูลจริง ทั้งราคา ที่นั่ง
+            ไฟลต์ โปรแกรมเดินทาง และไฟล์ PDF ให้ลูกค้าไทยเลือกทริปต่างประเทศ
+            ได้ง่ายขึ้น
           </p>
 
           <div className={styles.heroActions}>
             <a
               className={styles.primaryButton}
-              href={`https://wa.me/${whatsappNumber}`}
+              href={lineLink}
               target="_blank"
               rel="noreferrer"
             >
-              Ask for quotation
+              สอบถามผ่าน LINE
             </a>
 
             <Link className={styles.secondaryButton} href="/contact">
-              Contact team
+              ติดต่อทีมงาน
             </Link>
           </div>
         </div>
 
-        <div className={styles.heroPanel} aria-label="Live package summary">
+        <div className={styles.heroPanel} aria-label="สรุปแพ็กเกจทัวร์">
           <div>
             <strong>{formatNumber(packageData.packages.length)}</strong>
-            <span>Packages loaded</span>
+            <span>แพ็กเกจทั้งหมด</span>
           </div>
 
           <div>
             <strong>{formatNumber(stats.countries)}</strong>
-            <span>Countries</span>
+            <span>ประเทศ</span>
           </div>
 
           <div>
             <strong>{formatNumber(stats.openPackages)}</strong>
-            <span>With open seats</span>
+            <span>ยังมีที่นั่ง</span>
           </div>
 
           <div>
             <strong>{formatNumber(stats.totalSeats)}</strong>
-            <span>Total seats shown</span>
+            <span>ที่นั่งรวม</span>
           </div>
         </div>
       </section>
 
-      <section className={styles.sourceStrip} aria-label="Package source status">
+      <section className={styles.sourceStrip} aria-label="สถานะแหล่งข้อมูลแพ็กเกจ">
         <div>
-          <span>Source</span>
+          <span>แหล่งข้อมูล</span>
           <strong>
             {packageData.sources
               .map((source) => source.provider.name)
-              .join(', ') || 'Not connected'}
+              .join(', ') || 'ยังไม่ได้เชื่อมต่อ'}
           </strong>
         </div>
 
         <div>
-          <span>Next departure</span>
+          <span>วันเดินทางเร็วสุด</span>
           <strong>
             {stats.nextDeparture
               ? formatDate(stats.nextDeparture)
-              : 'Date TBC'}
+              : 'รอวันเดินทาง'}
           </strong>
         </div>
 
         <div>
-          <span>Last sync</span>
+          <span>ซิงก์ล่าสุด</span>
           <strong>{formatDateTime(packageData.fetchedAt)}</strong>
         </div>
 
         <div>
-          <span>Supplier update</span>
+          <span>อัปเดตจาก supplier</span>
           <strong>
             {formatDateTime(
               packageData.sources.find((source) => source.latestUpdate)
@@ -202,8 +204,8 @@ export default async function TourPackagesPage() {
       {sourceMessages.length > 0 ? (
         <section className={styles.notice} role="status">
           <div>
-            <p className={styles.eyebrow}>Source notice</p>
-            <h2>Some live package data could not be loaded</h2>
+            <p className={styles.eyebrow}>แจ้งเตือนข้อมูล</p>
+            <h2>ข้อมูลบางส่วนจาก supplier โหลดไม่สำเร็จ</h2>
           </div>
 
           <ul>
@@ -219,9 +221,9 @@ export default async function TourPackagesPage() {
       <TourPackagesExplorer
         countryOptions={getTourPackageCountries(packageData.packages)}
         initialPackages={initialPackagePage.items}
+        lineHref={lineLink}
         statusOptions={getTourPackageStatuses(packageData.packages)}
         totalPackages={initialPackagePage.total}
-        whatsappNumber={whatsappNumber}
       />
     </div>
   )

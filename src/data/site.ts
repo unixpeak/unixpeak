@@ -101,7 +101,7 @@ export const siteInfo: SiteInfo = {
       href: '/program-tours',
     },
     {
-      label: 'Tour Packages',
+      label: 'Overseas Tours',
       labelTh: 'à¹à¸žà¹‡à¸à¹€à¸à¸ˆà¸—à¸±à¸§à¸£à¹Œ',
       href: '/tour-packages',
     },

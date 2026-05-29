@@ -15,9 +15,9 @@ import styles from './page.module.css'
 type TourPackagesExplorerProps = {
   countryOptions: string[]
   initialPackages: TourPackage[]
+  lineHref: string
   statusOptions: string[]
   totalPackages: number
-  whatsappNumber: string
 }
 
 const fallbackImage = '/images/tours/thailand-trip.png'
@@ -28,15 +28,15 @@ const priceFormatter = new Intl.NumberFormat('en-US', {
 
 function formatPrice(value: number | null) {
   if (typeof value !== 'number') {
-    return 'Price TBC'
+    return 'รอราคา'
   }
 
-  return `${priceFormatter.format(value)} THB`
+  return `${priceFormatter.format(value)} บาท`
 }
 
 function formatDate(value: string) {
   if (!value) {
-    return 'Date TBC'
+    return 'รอวันเดินทาง'
   }
 
   const date = new Date(`${value}T00:00:00+07:00`)
@@ -45,7 +45,7 @@ function formatDate(value: string) {
     return value
   }
 
-  return new Intl.DateTimeFormat('en-GB', {
+  return new Intl.DateTimeFormat('th-TH', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
@@ -55,7 +55,7 @@ function formatDate(value: string) {
 
 function formatDateRange(startDate: string, endDate: string) {
   if (!startDate && !endDate) {
-    return 'Date TBC'
+    return 'รอวันเดินทาง'
   }
 
   if (!endDate || startDate === endDate) {
@@ -67,41 +67,44 @@ function formatDateRange(startDate: string, endDate: string) {
 
 function formatDuration(days: number | null, nights: number | null) {
   if (!days && !nights) {
-    return 'Duration TBC'
+    return 'รอระยะเวลา'
   }
 
   if (days && nights) {
-    return `${days}D ${nights}N`
+    return `${days} วัน ${nights} คืน`
   }
 
-  return days ? `${days} days` : `${nights} nights`
+  return days ? `${days} วัน` : `${nights} คืน`
 }
 
 function formatTime(value: string) {
   return value ? value.slice(0, 5) : ''
 }
 
-function buildWhatsAppLink(tourPackage: TourPackage, whatsappNumber: string) {
-  const period = tourPackage.nextPeriod
-  const message = [
-    `Hello Unix Peak Travel, I am interested in ${tourPackage.name}.`,
-    `Package code: ${tourPackage.code}`,
-    period
-      ? `Departure: ${formatDateRange(period.startDate, period.endDate)}`
-      : '',
-  ]
-    .filter(Boolean)
-    .join('\n')
+function formatStatus(status: string) {
+  const normalizedStatus = status.trim().toLowerCase()
 
-  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+  if (normalizedStatus === 'book') {
+    return 'เปิดจอง'
+  }
+
+  if (normalizedStatus.includes('close')) {
+    return 'ปิดกรุ๊ป'
+  }
+
+  if (normalizedStatus.includes('full')) {
+    return 'เต็ม'
+  }
+
+  return status || 'รอสถานะ'
 }
 
 export function TourPackagesExplorer({
   countryOptions,
   initialPackages,
+  lineHref,
   statusOptions,
   totalPackages,
-  whatsappNumber,
 }: TourPackagesExplorerProps) {
   const [search, setSearch] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('all')
@@ -141,7 +144,7 @@ export function TourPackagesExplorer({
       })
 
       if (!response.ok) {
-        throw new Error('Tour packages could not be loaded.')
+        throw new Error('โหลดแพ็กเกจทัวร์ไม่ได้ กรุณาลองใหม่อีกครั้ง')
       }
 
       return (await response.json()) as TourPackagePage
@@ -173,7 +176,7 @@ export function TourPackagesExplorer({
           setErrorMessage(
             error instanceof Error
               ? error.message
-              : 'Tour packages could not be loaded.',
+              : 'โหลดแพ็กเกจทัวร์ไม่ได้ กรุณาลองใหม่อีกครั้ง',
           )
         })
         .finally(() => {
@@ -205,7 +208,7 @@ export function TourPackagesExplorer({
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : 'More tour packages could not be loaded.',
+          : 'โหลดแพ็กเกจเพิ่มเติมไม่ได้ กรุณาลองใหม่อีกครั้ง',
       )
     } finally {
       setIsLoadingMore(false)
@@ -214,39 +217,37 @@ export function TourPackagesExplorer({
 
   return (
     <>
-      <section className={styles.filters} aria-label="Tour package filters">
+      <section className={styles.filters} aria-label="ตัวกรองแพ็กเกจทัวร์">
         <div className={styles.filtersHeader}>
           <div>
-            <p className={styles.eyebrow}>Package Finder</p>
-            <h2>Live departures and supplier programs</h2>
+            <p className={styles.eyebrow}>ค้นหาแพ็กเกจ</p>
+            <h2>ค้นหาแพ็กเกจทัวร์ต่างประเทศ</h2>
           </div>
 
           <p>
             <strong>{totalCount}</strong>
-            <span>
-              {totalCount === 1 ? 'package' : 'packages'} found
-            </span>
+            <span>แพ็กเกจที่พบ</span>
           </p>
         </div>
 
         <div className={styles.controlGrid}>
           <label className={styles.control}>
-            <span>Search</span>
+            <span>ค้นหา</span>
             <input
               type="search"
               value={search}
-              placeholder="Country, package code, airline..."
+              placeholder="ประเทศ, Package Code, สายการบิน..."
               onChange={(event) => setSearch(event.target.value)}
             />
           </label>
 
           <label className={styles.control}>
-            <span>Country</span>
+            <span>ประเทศ</span>
             <select
               value={selectedCountry}
               onChange={(event) => setSelectedCountry(event.target.value)}
             >
-              <option value="all">All countries</option>
+              <option value="all">ทุกประเทศ</option>
               {countryOptions.map((country) => (
                 <option key={country} value={country}>
                   {country}
@@ -256,32 +257,32 @@ export function TourPackagesExplorer({
           </label>
 
           <label className={styles.control}>
-            <span>Status</span>
+            <span>สถานะ</span>
             <select
               value={selectedStatus}
               onChange={(event) => setSelectedStatus(event.target.value)}
             >
-              <option value="all">All statuses</option>
+              <option value="all">ทุกสถานะ</option>
               {statusOptions.map((status) => (
                 <option key={status} value={status}>
-                  {status}
+                  {formatStatus(status)}
                 </option>
               ))}
             </select>
           </label>
 
           <label className={styles.control}>
-            <span>Sort</span>
+            <span>เรียงตาม</span>
             <select
               value={sortMode}
               onChange={(event) =>
                 setSortMode(event.target.value as TourPackageSortMode)
               }
             >
-              <option value="next-date">Next departure</option>
-              <option value="price-low">Lowest price</option>
-              <option value="seats-high">Most seats</option>
-              <option value="name">Package name</option>
+              <option value="next-date">วันเดินทางใกล้สุด</option>
+              <option value="price-low">ราคาต่ำสุด</option>
+              <option value="seats-high">ที่นั่งมากสุด</option>
+              <option value="name">ชื่อแพ็กเกจ</option>
             </select>
           </label>
         </div>
@@ -292,13 +293,13 @@ export function TourPackagesExplorer({
             checked={openSeatsOnly}
             onChange={(event) => setOpenSeatsOnly(event.target.checked)}
           />
-          <span>Only show packages with open seats</span>
+          <span>แสดงเฉพาะแพ็กเกจที่ยังมีที่นั่ง</span>
         </label>
       </section>
 
       {isFiltering ? (
         <section className={styles.inlineStatus} role="status">
-          Updating packages...
+          กำลังอัปเดตแพ็กเกจ...
         </section>
       ) : null}
 
@@ -309,7 +310,7 @@ export function TourPackagesExplorer({
       ) : null}
 
       {visiblePackages.length > 0 ? (
-        <section className={styles.packageGrid} aria-label="Tour package list">
+        <section className={styles.packageGrid} aria-label="รายการแพ็กเกจทัวร์">
           {visiblePackages.map((tourPackage, index) => {
             const nextPeriod = tourPackage.nextPeriod
             const imageSrc = tourPackage.imageUrl || fallbackImage
@@ -328,7 +329,7 @@ export function TourPackagesExplorer({
                   <Image
                     className={styles.packageImage}
                     src={imageSrc}
-                    alt={`${tourPackage.name} tour package`}
+                    alt={`แพ็กเกจทัวร์ ${tourPackage.name}`}
                     fill
                     fetchPriority={index < 2 ? 'high' : 'auto'}
                     loading={index < 2 ? 'eager' : 'lazy'}
@@ -337,8 +338,8 @@ export function TourPackagesExplorer({
 
                   <div className={styles.cardBadges}>
                     <span>{tourPackage.provider.name}</span>
-                    {nextPeriod?.promotion ? <span>Promotion</span> : null}
-                    {nextPeriod?.confirmed ? <span>Confirmed</span> : null}
+                    {nextPeriod?.promotion ? <span>โปรโมชัน</span> : null}
+                    {nextPeriod?.confirmed ? <span>คอนเฟิร์มแล้ว</span> : null}
                   </div>
                 </div>
 
@@ -346,7 +347,7 @@ export function TourPackagesExplorer({
                   <div className={styles.packageTop}>
                     <div>
                       <p className={styles.cardEyebrow}>
-                        {tourPackage.countryName || 'International'}
+                        {tourPackage.countryName || 'ต่างประเทศ'}
                       </p>
 
                       <h3>{tourPackage.name}</h3>
@@ -360,13 +361,13 @@ export function TourPackagesExplorer({
                     </div>
 
                     <p className={styles.price}>
-                      From <strong>{formatPrice(tourPackage.minPrice)}</strong>
+                      เริ่มต้น <strong>{formatPrice(tourPackage.minPrice)}</strong>
                     </p>
                   </div>
 
                   <dl className={styles.quickFacts}>
                     <div>
-                      <dt>Duration</dt>
+                      <dt>ระยะเวลา</dt>
                       <dd>
                         {formatDuration(tourPackage.days, tourPackage.nights)}
                       </dd>
@@ -374,17 +375,17 @@ export function TourPackagesExplorer({
 
                     <div>
                       <dt>Airline</dt>
-                      <dd>{tourPackage.airlineName || 'TBC'}</dd>
+                      <dd>{tourPackage.airlineName || 'รอสายการบิน'}</dd>
                     </div>
 
                     <div>
-                      <dt>Seats</dt>
+                      <dt>ที่นั่ง</dt>
                       <dd>{tourPackage.availableSeats}</dd>
                     </div>
 
                     <div>
-                      <dt>Status</dt>
-                      <dd>{getPackageStatus(tourPackage)}</dd>
+                      <dt>สถานะ</dt>
+                      <dd>{formatStatus(getPackageStatus(tourPackage))}</dd>
                     </div>
                   </dl>
 
@@ -396,7 +397,7 @@ export function TourPackagesExplorer({
 
                   <div className={styles.detailColumns}>
                     <div className={styles.detailBlock}>
-                      <h4>Next departures</h4>
+                      <h4>วันเดินทางที่เปิดจอง</h4>
 
                       {visiblePeriods.length > 0 ? (
                         <ul>
@@ -413,12 +414,12 @@ export function TourPackagesExplorer({
                           ))}
                         </ul>
                       ) : (
-                        <p>Date TBC</p>
+                        <p>รอวันเดินทาง</p>
                       )}
                     </div>
 
                     <div className={styles.detailBlock}>
-                      <h4>Flights</h4>
+                      <h4>ไฟลต์บิน</h4>
 
                       {visibleFlights.length > 0 ? (
                         <ul>
@@ -426,30 +427,30 @@ export function TourPackagesExplorer({
                             <li key={`${flight.flightNo}-${flight.route}`}>
                               <span>
                                 {flight.flightNo || flight.airlineCode} -{' '}
-                                {flight.route || 'Route TBC'}
+                                {flight.route || 'รอเส้นทาง'}
                               </span>
                               <strong>
                                 {[formatTime(flight.departureTime), formatTime(flight.arrivalTime)]
                                   .filter(Boolean)
-                                  .join(' - ') || 'Time TBC'}
+                                  .join(' - ') || 'รอเวลา'}
                               </strong>
                             </li>
                           ))}
                         </ul>
                       ) : (
-                        <p>Flight TBC</p>
+                        <p>รอข้อมูลไฟลต์</p>
                       )}
                     </div>
                   </div>
 
                   {visibleItinerary.length > 0 ? (
                     <div className={styles.itinerary}>
-                      <h4>Itinerary preview</h4>
+                      <h4>โปรแกรมคร่าว ๆ</h4>
 
                       <ol>
                         {visibleItinerary.map((day) => (
                           <li key={day.id || day.day}>
-                            <strong>Day {day.day ?? '-'}</strong>
+                            <strong>วันที่ {day.day ?? '-'}</strong>
                             <span lang="th">{day.description}</span>
                           </li>
                         ))}
@@ -460,11 +461,11 @@ export function TourPackagesExplorer({
                   <div className={styles.cardActions}>
                     <a
                       className={styles.primaryButton}
-                      href={buildWhatsAppLink(tourPackage, whatsappNumber)}
+                      href={lineHref}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Ask on WhatsApp
+                      สอบถามผ่าน LINE
                     </a>
 
                     {tourPackage.pdfUrl ? (
@@ -474,7 +475,7 @@ export function TourPackagesExplorer({
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Open PDF
+                        เปิด PDF
                       </a>
                     ) : null}
 
@@ -485,7 +486,7 @@ export function TourPackagesExplorer({
                         target="_blank"
                         rel="noreferrer"
                       >
-                        Word file
+                        ไฟล์ Word
                       </a>
                     ) : null}
                   </div>
@@ -496,20 +497,20 @@ export function TourPackagesExplorer({
         </section>
       ) : (
         <section className={styles.emptyState}>
-          <p className={styles.eyebrow}>No packages</p>
-          <h2>No tour packages match the current filters</h2>
+          <p className={styles.eyebrow}>ไม่พบแพ็กเกจ</p>
+          <h2>ไม่พบแพ็กเกจที่ตรงกับตัวกรอง</h2>
           <p>
-            Try another country, status, or search term. Live source errors will
-            also appear above this section.
+            ลองเปลี่ยนประเทศ สถานะ หรือคำค้นหาอีกครั้ง หาก supplier โหลดข้อมูล
+            ไม่สำเร็จ ระบบจะแสดงแจ้งเตือนด้านบน
           </p>
         </section>
       )}
 
       {visiblePackages.length > 0 ? (
-        <section className={styles.loadMoreWrap} aria-label="Load more packages">
+        <section className={styles.loadMoreWrap} aria-label="โหลดแพ็กเกจเพิ่มเติม">
           <p>
-            Showing <strong>{visiblePackages.length}</strong> of{' '}
-            <strong>{totalCount}</strong> packages.
+            แสดง <strong>{visiblePackages.length}</strong> จาก{' '}
+            <strong>{totalCount}</strong> แพ็กเกจ
           </p>
 
           {hasMore ? (
@@ -519,10 +520,10 @@ export function TourPackagesExplorer({
               disabled={isFiltering || isLoadingMore}
               onClick={loadMorePackages}
             >
-              {isLoadingMore ? 'Loading...' : 'Load 20 more packages'}
+              {isLoadingMore ? 'กำลังโหลด...' : 'โหลดเพิ่มเติม'}
             </button>
           ) : (
-            <span>All matching packages loaded</span>
+            <span>โหลดแพ็กเกจที่ตรงกันครบแล้ว</span>
           )}
         </section>
       ) : null}
