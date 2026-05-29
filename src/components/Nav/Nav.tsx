@@ -10,6 +10,9 @@ import styles from "./Nav.module.css";
 export function Nav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const navigationLinks = siteInfo.mainNavigation.filter(
+    (link) => link.href !== "/#top",
+  );
 
   const openMenu = () => setIsOpen(true);
   const closeMenu = () => setIsOpen(false);
@@ -46,7 +49,7 @@ export function Nav() {
           </Link>
 
           <nav className={styles.desktopNav} aria-label="Primary navigation">
-            {siteInfo.mainNavigation.map((link) => (
+            {navigationLinks.map((link) => (
               <Link
                 className={`${styles.navLink} ${
                   pathname === link.href || (pathname === "/" && link.href === "/#top")
@@ -118,7 +121,7 @@ export function Nav() {
         </div>
 
         <nav className={styles.drawerNav} aria-label="Mobile primary navigation">
-          {siteInfo.mainNavigation.map((link) => (
+          {navigationLinks.map((link) => (
             <Link
               className={`${styles.drawerLink} ${
                 pathname === link.href || (pathname === "/" && link.href === "/#top")
