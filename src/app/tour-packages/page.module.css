@@ -11,7 +11,7 @@
 .packageGrid,
 .emptyState,
 .loadingGrid {
-  width: min(100%, var(--container));
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -203,7 +203,7 @@
 .inlineStatus,
 .inlineError,
 .loadMoreWrap {
-  width: min(100%, var(--container));
+  width: 100%;
   margin: 0 auto;
 }
 

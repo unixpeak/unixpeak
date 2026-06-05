@@ -101,15 +101,15 @@ export function ProgramToursFilter() {
                   src={tour.image}
                   alt={`${tour.title} travel program by Unix Peak Travel`}
                   fill
-                  sizes="(max-width: 760px) 100vw, (max-width: 1400px) 50vw, 33vw"
+                  sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, (max-width: 1180px) 33vw, 25vw"
                 />
+
+                <span className={styles.imageBadge}>{category.label}</span>
               </Link>
 
               <div className={styles.cardContent}>
                 <div className={styles.cardTop}>
-                  <div>
-                    <p className={styles.cardEyebrow}>{category.label}</p>
-
+                  <div className={styles.titleGroup}>
                     <h2>
                       <Link href={`/program-tours/${tour.slug}`}>
                         {tour.title}
@@ -122,20 +122,6 @@ export function ProgramToursFilter() {
                   </div>
 
                   <p className={styles.price}>{tour.price}</p>
-                </div>
-
-                <div className={styles.copy}>
-                  <p>{tour.excerpt}</p>
-                  <p lang="th">{tour.excerptTh}</p>
-                </div>
-
-                <div
-                  className={styles.tags}
-                  aria-label={`${tour.title} keywords`}
-                >
-                  {tour.tags.slice(0, 6).map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
                 </div>
 
                 <dl className={styles.facts}>
@@ -155,11 +141,25 @@ export function ProgramToursFilter() {
                   </div>
                 </dl>
 
+                <div className={styles.copy}>
+                  <p>{tour.excerpt}</p>
+                  <p lang="th">{tour.excerptTh}</p>
+                </div>
+
+                <div
+                  className={styles.tags}
+                  aria-label={`${tour.title} keywords`}
+                >
+                  {tour.tags.slice(0, 4).map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
                 <div className={styles.highlights}>
                   <h3>Highlights</h3>
 
                   <ul>
-                    {tour.highlights.slice(0, 3).map((highlight) => (
+                    {tour.highlights.slice(0, 2).map((highlight) => (
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>

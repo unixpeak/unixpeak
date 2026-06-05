@@ -58,6 +58,27 @@ export type Tour = {
 
 const northernThailandPackageImage = '/images/tours/thailand-trip.png'
 
+const package01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package001.jpg'
+const package02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package002.jpg'
+const package03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package003.jpg'
+const package04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/01/maerim-elephant-camp12.jpg'
+const package05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package005.jpg'
+const package06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package006.jpg'
+const package07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package007-300x225.jpg'
+const package08Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package008-300x225.jpg'
+const package09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package009.jpg'
+const package10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/12/mae-kampong-tour.jpg'
+
 const northernThailandPackageIncluded = [
   'Private transport arrangement',
   'Local guide coordination',
@@ -72,7 +93,32 @@ const northernThailandPackageIncludedTh = [
   'ประสานงานโรงแรม อาหาร และค่าเข้าชมตามรูปแบบแพ็กเกจ',
 ]
 
-const chiangMaiBudgetTourImage = northernThailandPackageImage
+const budget01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget001.jpg'
+const budget04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget004.jpg'
+const budget05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2024/07/Hiking-Doi-Inthanon010.png'
+const budget06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget006.jpg'
+const budget07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget007.jpg'
+const budget09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2026/02/chiangmai-night-safari187.jpg'
+const budget10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget010.jpg'
+const budget11Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/chiang_mai_city_tour_by_tuktuk04.jpg'
+const budget12Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/offering_to_monks05.jpg'
+const budget13Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/doi_suthep_temple_in_the_evening14.jpg'
+const budget14Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2022/09/lampang-tour02.jpg'
+const budget15Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/08/chiang-mai-coffee-farm-tour016.jpg'
+const budget16Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2024/07/joy-elephant-sanctuary019.png'
 
 const chiangMaiBudgetIncluded = [
   'Join-in group tour arrangement',
@@ -88,7 +134,38 @@ const chiangMaiBudgetIncludedTh = [
   'ประสานงานบัตรเข้า ค่ากิจกรรม และอาหารกลางวันตามโปรแกรม',
 ]
 
-const chiangMaiPrivateGroupTourImage = northernThailandPackageImage
+const chiangMaiTour01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/doi-pui-hmong-village02.jpg'
+const chiangMaiTour02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/Pagoda_DoiInthanon004.jpg'
+const chiangMaiTour03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/trek-baan-maeklang08.jpg'
+const chiangMaiTour04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/kiew-mae-pan008.jpg'
+const chiangMaiTour05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/Rongkhun_Temple006_resize.jpg'
+const chiangMaiTour06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/chui-fong-tea-plantation002.jpg'
+const chiangMaiTour07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/Wat-Chaloem-Phra-Kiat01.jpg'
+const chiangMaiTour08Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/monthatan-trail02.jpg'
+const chiangMaiTour09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/mae-rim-elephant-camp008.jpg'
+const chiangMaiTour10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/jumbo-elephant-camp004.jpg'
+const chiangMaiTour11Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/05/wat-luang-khun-win020.jpg'
+const chiangMaiTour12Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/12/Ban-Mae-Kampong01.jpg'
+const halfDayTour01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/Chedi-luag-temple005.jpg'
+const halfDayTour02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/Wat-doi-suthep01.jpg'
+const halfDayTour03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/Monk-Trail007.jpg'
+const halfDayTour04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/maerim-elephant-camp001.jpg'
 
 const chiangMaiPrivateGroupIncluded = [
   'Private tour arrangement for your group',
@@ -104,7 +181,38 @@ const chiangMaiPrivateGroupIncludedTh = [
   'วางแผนเส้นทางให้ยืดหยุ่นตามจังหวะและความสนใจของกลุ่ม',
 ]
 
-const chiangMaiTrekkingTourImage = northernThailandPackageImage
+const trekkingAtMaeTangAreaImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/Chiangmai_treks001.jpg'
+const trek02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/Chiangmai_treks002.jpg'
+const trek19Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/04/chiangmai_trek013-1.jpg'
+const trek20Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/04/chiangmai_trek011-1.jpg'
+const trek21Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2022/08/buddy-trek-maewang.jpg'
+const trek25Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/07/chiang-mai-maewin-trekking009.jpg'
+const trek23Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/day2-13.jpg'
+const trek24Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/07/chiangmai-trek-maewin-area007.jpg'
+const trek14Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/Chiangmai_treks014.jpg'
+const trek15Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/Chiangmai_treks015.jpg'
+const trek16Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/Chiangmai_treks016.jpg'
+const trekDoiInthanonMaeKlangLuangImage =
+  'https://mychiangmaitour.com/wp-content/images/trekking/chiangmai_treks017.jpg'
+const trekKewMaePanNatureTrailImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/11/kiew-mae-pan001.jpg'
+const trekDoiSuthepWatPhaLatImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/monthatan-trail07.jpg'
+const trek26Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/Monk-Trail008.jpg'
+const trek22Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2022/11/chiang-dao-trek-route2-14.jpg'
 
 const chiangMaiTrekkingIncluded = [
   'Trekking route arrangement',
@@ -120,7 +228,34 @@ const chiangMaiTrekkingIncludedTh = [
   'วางแผนกิจกรรมและอาหารตามโปรแกรม',
 ]
 
-const chiangRaiPackageTourImage = northernThailandPackageImage
+const chiangRaiBudget07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget007.jpg'
+const chiangRaiBudget10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/budget010.jpg'
+const tour16Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/tour0016.jpg'
+const tour17Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/tour017.jpg'
+const chiangRaiPackage04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/03/the-chang-elephant-camp015.jpg'
+const chiangRaiPackage09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package009.jpg'
+const chiangraiTourPackage01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/07/chiangrai_tour_package01.jpg'
+const chiangraiTourPackage02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/package010-300x225.jpg'
+const chiangraiTourPackage03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/03/chiang-mai-ta-ton-sailing-trip01.jpg'
+const chiangraiTourPackage04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/03/Wat_Chaloem_Phra_Kiat_Lampang09.jpg'
+const chiangRaiTour01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/01/choui_fong_tea_plantation11.jpg'
+const chiangRaiTour02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/10/chiang-rai-trekking008.jpg'
+const chiangRaiTour03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/10/chiang-rai-trekking015.jpg'
+const chiangRaiTour04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/10/Elephant-Family-Chiang-Rai108.jpg'
 
 const chiangRaiPackageIncluded = [
   'Chiang Rai tour route arrangement',
@@ -136,7 +271,38 @@ const chiangRaiPackageIncludedTh = [
   'วางแผนกิจกรรม อาหาร และค่าเข้าชมตามโปรแกรม',
 ]
 
-const maeHongSonPackageTourImage = northernThailandPackageImage
+const maehongsonTour01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/maehongson_tour001.jpg'
+const maehongsonTour02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/maehongson_tour002.jpg'
+const maehongsonTour03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/maehongson_tour003.jpg'
+const maehongsonTour04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/maehongson_tour004.jpg'
+const maehongsonTour05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/maehongson_tour005.jpg'
+const maehongsonTour06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/03/Ban-Rak-Thai005.jpg'
+const maehongsonTour07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/04/package_tour_mae_jam02.jpg'
+const paiDayTour01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/Pem-Bok-Waterfall06.jpg'
+const paiDayTour02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/Pai_Hot_Spring_Spa07.jpg'
+const paiDayTour03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/pai-canyon06.jpg'
+const paiDayTour04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/long-neck-village07.jpg'
+const paiDayTour05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/lod-cave12.jpg'
+const paiDayTour06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/sai-ngam-hotspring07.jpg'
+const paiDayTour07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/sawaddee-pai-yoga08.jpg'
+const paiDayTour08Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/pai-tubing10.jpg'
+const paiDayTour09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/pai-bamboo-rafting11.jpg'
 
 const maeHongSonPackageIncluded = [
   'Mae Hong Son route arrangement',
@@ -152,7 +318,38 @@ const maeHongSonPackageIncludedTh = [
   'Accommodation, activity, meal, and entrance fee planning according to the source program',
 ]
 
-const maeHongSonTrekkingTourImage = northernThailandPackageImage
+const maeHongSonTrek01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/03/hike-to-Doi-Pui-Luang093.png'
+const maeHongSonTrek02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Huay-Kaew-Bon093.jpg'
+const maeHongSonTrek03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Huai-Kung042.jpg'
+const maeHongSonTrek04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Mae-Lana083.jpg'
+const maeHongSonTrek05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Jabo021.jpg'
+const maeHongSonTrek06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/05/Ban-Pha-Mon041.jpg'
+const maeHongSonTrek07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/05/Ban-Muang-Pam018.jpg'
+const maeHongSonTrek08Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/05/ban-muang-pon140.jpg'
+const maeHongSonTrek09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/03/hike-to-Doi-Pui-Luang091.png'
+const maeHongSonTrek10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Huay-Kaew-Bon117.jpg'
+const maeHongSonTrek11Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Huai-Kung018.jpg'
+const maeHongSonTrek12Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/06/lod-cave008.jpg'
+const maeHongSonTrek13Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/05/Ban-Pha-Mon046.jpg'
+const maeHongSonTrek14Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/05/Ban-Muang-Pam125.jpg'
+const maeHongSonTrek15Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/04/Ban-Jabo023.jpg'
+const maeHongSonTrek16Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/05/ban-muang-pon038.jpg'
 
 const maeHongSonTrekkingIncluded = [
   'Mae Hong Son trekking route arrangement',
@@ -168,7 +365,24 @@ const maeHongSonTrekkingIncludedTh = [
   'Activity, meal, homestay, and cultural experience planning according to the source program',
 ]
 
-const chiangMaiElephantTourImage = northernThailandPackageImage
+const elephantHalfDayTour04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/mae-rim-elephant-camp004.jpg'
+const elephantChiangMaiTour09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/mae-rim-elephant-camp008.jpg'
+const elephantChiangMaiTour10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/jumbo-elephant-camp004.jpg'
+const halfDayKantaElephantSanctuaryImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/02/kanta-elephant-sanctuary14.jpg'
+const fullDayKantaElephantSanctuaryImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/02/kanta-elephant-sanctuary16.jpg'
+const halfDayElephantJungleSanctuaryImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/02/elephant-jungle-sanctuart-chiang-mai022-200.jpg'
+const fullDayElephantJungleSanctuaryImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/02/elephant-jungle-sanctuart-chiang-mai050-200.jpg'
+const elephantBudget05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2024/07/Hiking-Doi-Inthanon010.png'
+const elephantBudget16Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2024/07/joy-elephant-sanctuary019.png'
 
 const chiangMaiElephantIncluded = [
   'Chiang Mai elephant care program arrangement',
@@ -184,6 +398,14 @@ const chiangMaiElephantIncludedTh = [
   'Activity, meal, and entrance fee planning according to the source program',
 ]
 
+const zipline01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/canopy001.jpg'
+const zipline02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/canopy002.jpg'
+const zipline04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/canopy004.jpg'
+const zipline07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2022/09/phoenix-adventure-park30.jpg'
 const chiangMaiZiplineTourImage = northernThailandPackageImage
 
 const chiangMaiZiplineIncluded = [
@@ -200,7 +422,34 @@ const chiangMaiZiplineIncludedTh = [
   'Activity, meal, and equipment planning according to the source program',
 ]
 
-const chiangMaiAdventureTourImage = northernThailandPackageImage
+const adventure01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/adventure001.jpg'
+const adventure02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/04/Chiang-Mai-ATV019.jpg'
+const adventure03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/adventure003.jpg'
+const adventure04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/Chiang_Mai_Biking_Tour12.jpg'
+const flyingParamotorImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2021/12/flying-bird-paramotor004.jpg'
+const chiangMaiWhiteWaterRaftingImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/adventure006.jpg'
+const horseImage =
+  'https://mychiangmaitour.com/wp-content/images/attractions/chiangmai_horse_riding017.jpg'
+const adventure08Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/chiang-mai-shooting-range12.jpg'
+const adventure09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2017/11/chiang_mai_fishing02.jpg'
+const adventure10Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/adventure004.jpg'
+const bambooRaftingInMaeWangImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2017/12/bamboo_rafting_in_mae_wang09.jpg'
+const tubeTrekWaterParkImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2017/12/Tube_Trek_Water_Park09.jpg'
+const adventure13Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/06/Tuktuk_Driving_Tour11.jpg'
+const adventure14Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/04/chiang-mai-atv22.png'
 
 const chiangMaiAdventureIncluded = [
   'Chiang Mai adventure activity arrangement',
@@ -216,7 +465,16 @@ const chiangMaiAdventureIncludedTh = [
   'Equipment, route, and activity planning according to the source program',
 ]
 
-const chiangMaiRestaurantTourImage = northernThailandPackageImage
+const restaurant01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/restaurants001.jpg'
+const restaurant02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/restaurants002.jpg'
+const restaurant03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/restaurants003.jpg'
+const restaurant04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/restaurants004.jpg'
+const restaurant05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/restaurants005.jpg'
 
 const chiangMaiRestaurantIncluded = [
   'Chiang Mai dining experience arrangement',
@@ -232,7 +490,12 @@ const chiangMaiRestaurantIncludedTh = [
   'Meal, show, cruise, and activity planning according to the source program',
 ]
 
-const chiangMaiCookeryTourImage = northernThailandPackageImage
+const cookery01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/cooking001.jpg'
+const cookery02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/cooking002.jpg'
+const cookery03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/cooking005.jpg'
 
 const chiangMaiCookeryIncluded = [
   'Chiang Mai cooking class arrangement',
@@ -248,7 +511,24 @@ const chiangMaiCookeryIncludedTh = [
   'Market tour, recipe book, ingredients, and meal planning according to the source program',
 ]
 
-const chiangMaiGolfTourImage = northernThailandPackageImage
+const golf01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour005.jpg'
+const golf02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour003.jpg'
+const golf03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour004.jpg'
+const golf04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour002.jpg'
+const golf05Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour007.jpg'
+const golf06Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour001.jpg'
+const golf07Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour008.jpg'
+const golf08Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour006.jpg'
+const golf09Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/golf_tour009.jpg'
 
 const chiangMaiGolfIncluded = [
   'Chiang Mai golf course arrangement',
@@ -264,7 +544,14 @@ const chiangMaiGolfIncludedTh = [
   'Caddie, cart, equipment, and seasonal rate planning according to the source program',
 ]
 
-const chiangMaiToBangkokTourImage = northernThailandPackageImage
+const chiangMaiToBangkok01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/05/sukhothai_historical_park011.jpg'
+const chiangMaiToBangkok02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/05/sukhothai_historical_park012.jpg'
+const chiangMaiToBangkok03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/05/World_War_II_Cemetery_and_Museum05.jpg'
+const chiangMaiToBangkok04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/05/Erawan_Waterfall005.jpg'
 
 const chiangMaiToBangkokIncluded = [
   'Private Chiang Mai to Bangkok route arrangement',
@@ -280,7 +567,34 @@ const chiangMaiToBangkokIncludedTh = [
   'Accommodation, activity, meal, and entrance fee planning according to the source program',
 ]
 
-const youthCampTourImage = northernThailandPackageImage
+const youthCampEleNatureImmersionImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Ele-Nature-Immersion-Camp.png'
+const youthCampChiangDaoTrekCaveImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Chiang-Dao-Trek-Cave-Camp.png'
+const youthCampElephantPoopooPaperParkImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/elephant-poo-poo-paper-park110.jpg'
+const youthCampLannaAncientThaiArtsImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Sri-suphan-temple015.jpg'
+const youthCampQueenSirikitBotanicGardenImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Botanic-Garden036.jpg'
+const youthCampSiamInsectZooImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Siam-Insect-Zoo027.jpg'
+const youthCampChiangMaiCoffeeFarmImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2023/08/chiang-mai-coffee-farm-tour007.jpg'
+const youthCampEarthHomeThailandImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/maejo-baan-din.jpg'
+const youthCampUmbrellaMakingCentreImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Thai-Art-Gallery032.jpg'
+const youthCampChiangMaiCeladonImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Siladon088.jpg'
+const youthCampBanMuangKungImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/Pottery-Workshop-3.jpg'
+const youthCampHandmadeNotebookShopImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/note-a-book.jpg'
+const youthCampSateeCeramicImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/satee.ceramic.jpg'
+const youthCampChiangmaiArtsCraftsWorkshopImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2025/09/chiangmai-arts-n-crafts-workshop.jpg'
 
 const youthCampIncluded = [
   'Custom Chiang Mai youth camp planning',
@@ -296,7 +610,14 @@ const youthCampIncludedTh = [
   'Age, group size, entrance fee, and workshop fee planning according to the source program',
 ]
 
-const specialToursImage = northernThailandPackageImage
+const event01Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2024/10/kiew-mae-pan.png'
+const event02Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2024/10/Khunwang.png'
+const event03Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/06/YI-PENG-2026-Updated_0-scaled.jpg'
+const event04Image =
+  'https://mychiangmaitour.com/wp-content/uploads/2019/05/2026-3.png'
 
 const specialToursIncluded = [
   'Seasonal Chiang Mai special tour arrangement',
@@ -312,7 +633,8 @@ const specialToursIncludedTh = [
   'Ticket, entrance fee, and seasonal availability planning according to the source program',
 ]
 
-const muayThaiTourImage = northernThailandPackageImage
+const muayThaiImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2016/02/thai_boxing001.jpg'
 
 const muayThaiIncluded = [
   'Thai kick boxing ticket arrangement',
@@ -328,7 +650,8 @@ const muayThaiIncludedTh = [
   'Fight schedule and ticket availability planning according to the source program',
 ]
 
-const carRentalTourImage = northernThailandPackageImage
+const chiangMaiCarRentalWithDriverImage =
+  'https://mychiangmaitour.com/wp-content/uploads/2018/10/toyota_commuter.jpg'
 
 const carRentalIncluded = [
   'Comfortable air-conditioned sedan car or van',
@@ -547,7 +870,7 @@ export const tours: Tour[] = [
       'Home Industries',
       'Full day',
     ],
-    image: northernThailandPackageImage,
+    image: package01Image,
     highlights: [
       'Local Elephant Camp in the morning',
       'Buffet lunch at Orchid Farm and butterfly farm',
@@ -596,7 +919,7 @@ export const tours: Tour[] = [
       'Animal attractions',
       'Nature',
     ],
-    image: northernThailandPackageImage,
+    image: package02Image,
     highlights: [
       'Authentic Elephant Day Care experience',
       'Feeding and bathing elephants',
@@ -646,7 +969,7 @@ export const tours: Tour[] = [
       'Sankampeang Handicraft Village',
       '3 days',
     ],
-    image: northernThailandPackageImage,
+    image: package03Image,
     highlights: [
       'Day 1: Doi Suthep Temple, city temples, and Sankampeang Handicraft Village',
       'Day 2: Mae Tang Elephant Camp, Tiger Kingdom, Karen Long Neck and Hill Tribes Village, and Orchid Farm',
@@ -693,7 +1016,7 @@ export const tours: Tour[] = [
       'Hot Spring',
       '3 days',
     ],
-    image: northernThailandPackageImage,
+    image: package04Image,
     highlights: [
       'Day 1: Elephant Safari Tour and Sankampeang Handicraft Village',
       'Day 2: Doi Inthanon National Park',
@@ -742,7 +1065,7 @@ export const tours: Tour[] = [
       'Heritage',
       '2 days',
     ],
-    image: northernThailandPackageImage,
+    image: package05Image,
     highlights: [
       'Day 1: Lampang Luang Temple and Sukhothai Historical Park',
       'Day 2: Phra Buddha Shinnarach in Phitsanulok and Phra That Haripoonchai Temple in Lamphun',
@@ -789,7 +1112,7 @@ export const tours: Tour[] = [
       'Nature',
       '2 days',
     ],
-    image: northernThailandPackageImage,
+    image: package06Image,
     highlights: [
       'Day 1: Elephant Safari Tour and Sankampeang Handicraft Village',
       'Day 2: Doi Inthanon National Park',
@@ -835,7 +1158,7 @@ export const tours: Tour[] = [
       'Karen Long Neck',
       '2 days',
     ],
-    image: northernThailandPackageImage,
+    image: package07Image,
     highlights: [
       'Day 1: Doi Suthep Temple, Meung On Cave, Sankampaeng Hot Spring, and Handicraft Village',
       'Day 2: Mae Sa Elephant Camp, Orchid Farm, Tiger Kingdom, Karen Long Neck and Hill Tribes Village',
@@ -882,7 +1205,7 @@ export const tours: Tour[] = [
       'Heritage',
       '2 days',
     ],
-    image: northernThailandPackageImage,
+    image: package08Image,
     highlights: [
       'Day 1: Doi Inthanon National Park',
       'Day 2: Lampang Elephant Conservation Center and Wat Phra That Lampang Luang',
@@ -932,7 +1255,7 @@ export const tours: Tour[] = [
       'Kantoke Dinner',
       '3 days',
     ],
-    image: northernThailandPackageImage,
+    image: package09Image,
     highlights: [
       'Day 1: Doi Suthep Temple, Tiger Kingdom, Orchid Farm, Mae Sa Elephant Camp, and Kantoke Dinner',
       'Day 2: Chiang Rai Hot Spring, White Temple and city tour, Chiang Saen ancient city, and Mae Sai',
@@ -981,7 +1304,7 @@ export const tours: Tour[] = [
       'Countryside village',
       '2 days',
     ],
-    image: northernThailandPackageImage,
+    image: package10Image,
     highlights: [
       'Ban Mae Kampong ancient village in Mae On County',
       'Countryside local life experience',
@@ -1029,7 +1352,7 @@ export const tours: Tour[] = [
       'Half day',
       'Join-in group',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget01Image,
     highlights: [
       'Doi Suthep Temple with city views',
       'Thai king winter palace in Chiang Mai',
@@ -1077,7 +1400,7 @@ export const tours: Tour[] = [
       'Karen',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget04Image,
     highlights: [
       'Mae Wang Area adventure trek south of Chiang Mai',
       'Feed and bathe elephants',
@@ -1125,7 +1448,7 @@ export const tours: Tour[] = [
       'National Park',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget05Image,
     highlights: [
       'Elephant observation and hands-on activities',
       'Doi Inthanon National Park',
@@ -1174,7 +1497,7 @@ export const tours: Tour[] = [
       'Hilltribe Village',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget06Image,
     highlights: [
       'Doi Inthanon National Park, Thailand highest peak',
       'Twin King and Queen pagodas',
@@ -1222,7 +1545,7 @@ export const tours: Tour[] = [
       'Long Neck Karen',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget07Image,
     highlights: [
       'White Temple in Chiang Rai',
       'Black House Museum and Blue Temple',
@@ -1269,7 +1592,7 @@ export const tours: Tour[] = [
       'Private transfer',
       '3-4 hours',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget09Image,
     highlights: [
       'Night Safari Chiang Mai evening visit',
       'Special-rate ticket option',
@@ -1318,7 +1641,7 @@ export const tours: Tour[] = [
       'Long Neck Karen',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget10Image,
     highlights: [
       'Rong Khun White Temple',
       'Black House Museum',
@@ -1366,7 +1689,7 @@ export const tours: Tour[] = [
       'Waroros Market',
       'Half day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget11Image,
     highlights: [
       'Tha Phae Gate',
       'Wat Chedi Luang',
@@ -1414,7 +1737,7 @@ export const tours: Tour[] = [
       'Buddhist culture',
       'Half day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget12Image,
     highlights: [
       'Morning offering and respects to monks at Kru Ba Sri Wi Chai',
       'Wat Phra That Doi Suthep',
@@ -1459,7 +1782,7 @@ export const tours: Tour[] = [
       'Temple',
       'Night view',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget13Image,
     highlights: [
       'Evening religious service at Wat Umong',
       'Night-time views from Wat Phra That Doi Suthep',
@@ -1504,7 +1827,7 @@ export const tours: Tour[] = [
       'Mountain pagodas',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget14Image,
     highlights: [
       'Wat Phrabat Pu Phadaeng mountain pagodas',
       'Views over Lampang valleys',
@@ -1549,7 +1872,7 @@ export const tours: Tour[] = [
       'Mountain views',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget15Image,
     highlights: [
       'Chiang Mai Coffee Farm Tour',
       'Pang Hai coffee experience',
@@ -1596,7 +1919,7 @@ export const tours: Tour[] = [
       'Historic temples',
       'Full day',
     ],
-    image: chiangMaiBudgetTourImage,
+    image: budget16Image,
     highlights: [
       'Sunrise at Doi Suthep Temple',
       'Breakfast and historic temple visits',
@@ -1644,7 +1967,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour01Image,
     highlights: [
       'Elephant care experience',
       'Orchid Farm',
@@ -1696,7 +2019,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour02Image,
     highlights: [
       'Doi Inthanon National Park',
       'Thailand highest peak at 2,565 meters',
@@ -1746,7 +2069,7 @@ export const tours: Tour[] = [
       'Trekking',
       'Private group',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour03Image,
     highlights: [
       'Wachirathan Waterfall',
       'Eco trekking at Baan Mae Klang Luang Karen village',
@@ -1797,7 +2120,7 @@ export const tours: Tour[] = [
       'Trekking',
       'Private group',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour04Image,
     highlights: [
       'Wachirathan Waterfall',
       'Kew Mae Pan Nature Trail, 2.78 kilometers',
@@ -1846,7 +2169,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour05Image,
     highlights: [
       'Private Chiang Rai City tour from Chiang Mai',
       'Culture, arts, and sightseeing route',
@@ -1894,7 +2217,7 @@ export const tours: Tour[] = [
       'Laos',
       'Private group',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour06Image,
     highlights: [
       'Hot spring stop',
       'White Temple',
@@ -1943,7 +2266,7 @@ export const tours: Tour[] = [
       'Mountain temple',
       'Private group',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour07Image,
     highlights: [
       'Wat Chaloem Phra Kiat mountain-top temple',
       'Panoramic Lampang views',
@@ -1992,7 +2315,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour08Image,
     highlights: [
       'Wat Phrathat Doi Suthep',
       'Hmong Doi Pui Village',
@@ -2039,7 +2362,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour09Image,
     highlights: [
       'Elephant care experience',
       'Friendly elephant activities',
@@ -2087,7 +2410,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour10Image,
     highlights: [
       'Elephant care experience',
       'Bamboo rafting adventure',
@@ -2134,7 +2457,7 @@ export const tours: Tour[] = [
       'Thai cuisine',
       'Private group',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour11Image,
     highlights: [
       'Wat Luang Khun Win',
       'Lanna-style architecture and wooden Buddha',
@@ -2182,7 +2505,7 @@ export const tours: Tour[] = [
       'Private group',
       'Full day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: chiangMaiTour12Image,
     highlights: [
       'Mae Kampong Village',
       'Temple and village views',
@@ -2230,7 +2553,7 @@ export const tours: Tour[] = [
       'Private group',
       'Half day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: halfDayTour01Image,
     highlights: [
       'Wat Phra Singh',
       'Wat Chedi Luang',
@@ -2278,7 +2601,7 @@ export const tours: Tour[] = [
       'Private group',
       'Half day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: halfDayTour02Image,
     highlights: [
       'Doi Suthep Temple',
       'Hmong Hilltribe Village',
@@ -2326,7 +2649,7 @@ export const tours: Tour[] = [
       'Private group',
       'Half day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: halfDayTour03Image,
     highlights: [
       'Doi Suthep Temple',
       'Short Monk Trail trekking',
@@ -2372,7 +2695,7 @@ export const tours: Tour[] = [
       'Private group',
       'Half day',
     ],
-    image: chiangMaiPrivateGroupTourImage,
+    image: halfDayTour04Image,
     highlights: [
       'Elephant care experience',
       'Orchid Farm',
@@ -2419,7 +2742,7 @@ export const tours: Tour[] = [
       'Join-in group',
       'Full day',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trekkingAtMaeTangAreaImage,
     highlights: [
       'Adventure trek in Mae Taeng area',
       'Feed, interact, and play with elephants',
@@ -2467,7 +2790,7 @@ export const tours: Tour[] = [
       'Karen Long Neck',
       'Overnight',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek02Image,
     highlights: [
       'Mae Taeng adventure trek',
       'Elephant feeding and bathing',
@@ -2517,7 +2840,7 @@ export const tours: Tour[] = [
       'Mae Wang Waterfall',
       'Bamboo rafting',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek19Image,
     highlights: [
       'Elephant care',
       'Karen and Shan village cultures',
@@ -2566,7 +2889,7 @@ export const tours: Tour[] = [
       'Join-in group',
       '2 days',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek20Image,
     highlights: [
       'Mae Wang National Park',
       'Asian elephants in natural habitat',
@@ -2616,7 +2939,7 @@ export const tours: Tour[] = [
       'Join-in group',
       '3 days',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek21Image,
     highlights: [
       'Local markets',
       'Jungle trekking',
@@ -2666,7 +2989,7 @@ export const tours: Tour[] = [
       'Nature',
       'Join-in group',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek25Image,
     highlights: [
       'Mae Win trekking',
       'Thai farmer experience',
@@ -2717,7 +3040,7 @@ export const tours: Tour[] = [
       'Bamboo rafting',
       '2 days',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek23Image,
     highlights: [
       'Untouched nature in Chiang Mai south region',
       'Elephants and hilltribe villages',
@@ -2767,7 +3090,7 @@ export const tours: Tour[] = [
       'Culture',
       '3 days',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek24Image,
     highlights: [
       'Mae Win area trek',
       'Elephant interactions',
@@ -2817,7 +3140,7 @@ export const tours: Tour[] = [
       'Nature',
       '1-3 days',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek14Image,
     highlights: [
       'Doi Inthanon National Park trekking',
       'Elevation around 2,300 meters',
@@ -2869,7 +3192,7 @@ export const tours: Tour[] = [
       'Elephants',
       'Private trekking',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek15Image,
     highlights: [
       'Wachirathan Waterfall',
       'Twin Royal Pagodas and highest peak',
@@ -2921,7 +3244,7 @@ export const tours: Tour[] = [
       'Elephant sanctuary',
       'Private trekking',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek16Image,
     highlights: [
       'Wachirathan Waterfall and Twin Royal Pagodas',
       'Evergreen jungle trekking',
@@ -2972,7 +3295,7 @@ export const tours: Tour[] = [
       'Coffee',
       'Trekking',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trekDoiInthanonMaeKlangLuangImage,
     highlights: [
       'Pha Dok Siew Nature Trail',
       'Pha Dok Siew Waterfall',
@@ -3021,7 +3344,7 @@ export const tours: Tour[] = [
       'Open November to May',
       'Trekking',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trekKewMaePanNatureTrailImage,
     highlights: [
       'Kew Mae Pan Nature Trail, 2.78 kilometers',
       'Unseen mountain views',
@@ -3071,7 +3394,7 @@ export const tours: Tour[] = [
       'Trekking',
       'Half day',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trekDoiSuthepWatPhaLatImage,
     highlights: [
       'Doi Suthep Temple',
       'Wat Pha Lat hidden temple',
@@ -3120,7 +3443,7 @@ export const tours: Tour[] = [
       'Join-in group',
       'Half day',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek26Image,
     highlights: [
       'Monk Trail trekking',
       'Wat Pha Lat hidden temple',
@@ -3169,7 +3492,7 @@ export const tours: Tour[] = [
       'Private trekking',
       'Half day',
     ],
-    image: chiangMaiTrekkingTourImage,
+    image: trek22Image,
     highlights: [
       'Chiang Dao wildlife sanctuary',
       'Doi Chiang Dao biosphere reserve',
@@ -3220,7 +3543,7 @@ export const tours: Tour[] = [
       'Join-in group',
       'Full day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiBudget07Image,
     highlights: [
       'White Temple',
       'Black House Museum',
@@ -3270,7 +3593,7 @@ export const tours: Tour[] = [
       'Join-in group',
       'Full day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiBudget10Image,
     highlights: [
       'White Temple',
       'Black House Museum',
@@ -3321,7 +3644,7 @@ export const tours: Tour[] = [
       'Private tour',
       'Full day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: tour16Image,
     highlights: [
       'Wat Rong Khun White Temple',
       'Wat Phra Kaew',
@@ -3374,7 +3697,7 @@ export const tours: Tour[] = [
       'Private tour',
       'Full day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: tour17Image,
     highlights: [
       'Mae Ka Chan hot spring',
       'White Temple',
@@ -3425,7 +3748,7 @@ export const tours: Tour[] = [
       'Mae Sai',
       '3 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiPackage04Image,
     highlights: [
       'Elephant Safari Tour',
       'Sankampeang Handicraft Village',
@@ -3476,7 +3799,7 @@ export const tours: Tour[] = [
       'Doi Tung',
       '3 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiPackage09Image,
     highlights: [
       'Doi Suthep Temple',
       'Tiger Kingdom and Orchid Farm',
@@ -3527,7 +3850,7 @@ export const tours: Tour[] = [
       'Long Neck Village',
       '2 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangraiTourPackage01Image,
     highlights: [
       'Hot spring and White Temple',
       'Chiang Saen ancient city',
@@ -3578,7 +3901,7 @@ export const tours: Tour[] = [
       'Mae Sai',
       '3 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangraiTourPackage02Image,
     highlights: [
       'White Temple and city temples',
       'Chiang Rai Night Bazaar',
@@ -3631,7 +3954,7 @@ export const tours: Tour[] = [
       'Wat Rong Khun',
       '3 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangraiTourPackage03Image,
     highlights: [
       'Tat Ton Temple',
       'Tha Ton sailing trip to Karen village',
@@ -3684,7 +4007,7 @@ export const tours: Tour[] = [
       'Black House Museum',
       '4 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangraiTourPackage04Image,
     highlights: [
       'Wat Chaloem Phra Kiat in Lampang',
       'Wat Rong Khun and Chiang Rai Night Bazaar',
@@ -3734,7 +4057,7 @@ export const tours: Tour[] = [
       'Join-in group',
       'Full day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiTour01Image,
     highlights: [
       'Chiang Rai temples',
       'Art and culture stops',
@@ -3782,7 +4105,7 @@ export const tours: Tour[] = [
       'Hiking',
       'Full day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiTour02Image,
     highlights: [
       'Scenic trekking trails',
       'Hill tribe villages',
@@ -3831,7 +4154,7 @@ export const tours: Tour[] = [
       'Lahu',
       '2 days',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiTour03Image,
     highlights: [
       'Elephant experience',
       'Overnight Lisu village stay',
@@ -3878,7 +4201,7 @@ export const tours: Tour[] = [
       'Family-friendly',
       'Half day',
     ],
-    image: chiangRaiPackageTourImage,
+    image: chiangRaiTour04Image,
     highlights: [
       'Ethical elephant interaction',
       'Hands-on feeding and care',
@@ -3928,7 +4251,7 @@ export const tours: Tour[] = [
       'Cave exploration',
       '2 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour01Image,
     highlights: [
       'Mok Fa Waterfall',
       'Huay Nam Dang',
@@ -3976,7 +4299,7 @@ export const tours: Tour[] = [
       'Private tour',
       '2 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour02Image,
     highlights: [
       'Doi Inthanon summit area',
       'Misty mountain scenery',
@@ -4026,7 +4349,7 @@ export const tours: Tour[] = [
       'Village life',
       '2 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour03Image,
     highlights: [
       'Bamboo rafting',
       'Rural village life',
@@ -4077,7 +4400,7 @@ export const tours: Tour[] = [
       'Pai Canyon',
       '3 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour04Image,
     highlights: [
       'Doi Inthanon',
       'Tham Lod Cave',
@@ -4128,7 +4451,7 @@ export const tours: Tour[] = [
       'Scenic temples',
       '4 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour05Image,
     highlights: [
       'Mae Hong Son Loop',
       'Mountain passes',
@@ -4179,7 +4502,7 @@ export const tours: Tour[] = [
       'Ban Rak Thai',
       '4 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour06Image,
     highlights: [
       'Misty mountain viewpoints',
       'Natural hot springs',
@@ -4230,7 +4553,7 @@ export const tours: Tour[] = [
       'Village life',
       '4 days',
     ],
-    image: maeHongSonPackageTourImage,
+    image: maehongsonTour07Image,
     highlights: [
       'Mae Chaem route',
       'Misty mountain peaks',
@@ -4279,7 +4602,7 @@ export const tours: Tour[] = [
       'Pai Canyon',
       'Full day',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour01Image,
     highlights: [
       'Muang Pang Hot Spring',
       'Land Split',
@@ -4326,7 +4649,7 @@ export const tours: Tour[] = [
       'Pai Canyon',
       'Sunset',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour02Image,
     highlights: [
       'Pai Hot Spring and Spa',
       'Land Split',
@@ -4372,7 +4695,7 @@ export const tours: Tour[] = [
       'Pai Canyon',
       'Full day',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour03Image,
     highlights: [
       'Karen Long Neck village',
       'Wat Sri Donchai',
@@ -4419,7 +4742,7 @@ export const tours: Tour[] = [
       'Karen Long Neck',
       'Morning tour',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour04Image,
     highlights: [
       'Sai Ngam Hot Spring',
       'Yun Lai Viewpoint',
@@ -4466,7 +4789,7 @@ export const tours: Tour[] = [
       'Pai Canyon',
       'Full day',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour05Image,
     highlights: [
       'White Buddha on the hill',
       'Kiulom Viewpoint',
@@ -4514,7 +4837,7 @@ export const tours: Tour[] = [
       'Bamboo Bridge',
       'Pai Canyon',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour06Image,
     highlights: [
       'White Buddha on the hill',
       'Yun Lai Viewpoint and Chinese Village',
@@ -4561,7 +4884,7 @@ export const tours: Tour[] = [
       'Wellness',
       'Half day',
     ],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour07Image,
     highlights: ['Pai yoga class', 'Pai cool and hot spring spa'],
     highlightsTh: ['Pai yoga class', 'Pai cool and hot spring spa'],
     included: maeHongSonPackageIncluded,
@@ -4587,7 +4910,7 @@ export const tours: Tour[] = [
     price: 'Start from 350 THB / person',
     category: 'maehongson-tour-packages',
     tags: ['Pai', 'Tubing', 'Pai River', 'Water activity', '2 hours'],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour08Image,
     highlights: ['Tubing along Pai River'],
     highlightsTh: ['Tubing along Pai River'],
     included: maeHongSonPackageIncluded,
@@ -4614,7 +4937,7 @@ export const tours: Tour[] = [
     price: 'Start from 1,200 THB / 3 pax',
     category: 'maehongson-tour-packages',
     tags: ['Pai', 'Bamboo rafting', 'Pai River', 'Water activity', '1 hour'],
-    image: maeHongSonPackageTourImage,
+    image: paiDayTour09Image,
     highlights: ['Bamboo rafting along Pai River'],
     highlightsTh: ['Bamboo rafting along Pai River'],
     included: maeHongSonPackageIncluded,
@@ -4650,7 +4973,7 @@ export const tours: Tour[] = [
       'Day hike',
       'Private trekking',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek01Image,
     highlights: [
       'Doi Pui Luang day hike',
       'Ban Huay Hee Karen village',
@@ -4699,7 +5022,7 @@ export const tours: Tour[] = [
       '4WD',
       'Day hike',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek02Image,
     highlights: [
       'Ban Huay Kaew Bon village',
       'Untouched jungle trails',
@@ -4747,7 +5070,7 @@ export const tours: Tour[] = [
       'Riverside lunch',
       'Day trek',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek03Image,
     highlights: [
       'Ban Huai Kung trek',
       'Local Karen guides',
@@ -4796,7 +5119,7 @@ export const tours: Tour[] = [
       'Local guides',
       'Day trek',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek04Image,
     highlights: [
       'Ban Mae Lana trek',
       'Forest trails',
@@ -4845,7 +5168,7 @@ export const tours: Tour[] = [
       'Culture',
       'Day trek',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek05Image,
     highlights: [
       'Ban Jabo trekking',
       'Mixed-deciduous forest',
@@ -4893,7 +5216,7 @@ export const tours: Tour[] = [
       'Mountain ridges',
       'Weaving',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek06Image,
     highlights: [
       'Ban Pha Mon trek',
       'Untouched forest',
@@ -4942,7 +5265,7 @@ export const tours: Tour[] = [
       'Herbal healing',
       'Day trek',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek07Image,
     highlights: [
       'Lod Cave',
       'Natural corridor trekking',
@@ -4991,7 +5314,7 @@ export const tours: Tour[] = [
       'Village life',
       'Cultural day',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek08Image,
     highlights: [
       'Ban Muang Pon cultural day',
       'Tai Yai village life',
@@ -5041,7 +5364,7 @@ export const tours: Tour[] = [
       'Eco trekking',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek09Image,
     highlights: [
       'Doi Pui and Ban Huay Hee trek',
       'White Karen homestay',
@@ -5090,7 +5413,7 @@ export const tours: Tour[] = [
       'Karen village',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek10Image,
     highlights: [
       'Ban Huay Kaew two-day trek',
       'Rice fields and forest paths',
@@ -5139,7 +5462,7 @@ export const tours: Tour[] = [
       'Village life',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek11Image,
     highlights: [
       'Ban Huay Kung village',
       'Waterfall hike',
@@ -5188,7 +5511,7 @@ export const tours: Tour[] = [
       'Crafts',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek12Image,
     highlights: [
       'Lod Cave by bamboo raft',
       'Forest and farmland trek',
@@ -5237,7 +5560,7 @@ export const tours: Tour[] = [
       'Weaving',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek13Image,
     highlights: [
       'Ban Pha Mon trek',
       'Red Lahu traditions',
@@ -5286,7 +5609,7 @@ export const tours: Tour[] = [
       'Eco trekking',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek14Image,
     highlights: [
       'Ban Muang Pam highland trails',
       'Traditional Karen homestay',
@@ -5335,7 +5658,7 @@ export const tours: Tour[] = [
       'Heritage',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek15Image,
     highlights: [
       'Ban Jabo forest trails',
       'Rice terraces and village life',
@@ -5384,7 +5707,7 @@ export const tours: Tour[] = [
       'Village heritage',
       '2 days',
     ],
-    image: maeHongSonTrekkingTourImage,
+    image: maeHongSonTrek16Image,
     highlights: [
       'Ban Muang Pon village',
       'Tai Yai living culture',
@@ -5433,7 +5756,7 @@ export const tours: Tour[] = [
       'Private tour',
       'Half day',
     ],
-    image: chiangMaiElephantTourImage,
+    image: elephantHalfDayTour04Image,
     highlights: [
       'Mae Rim Elephant Home care experience',
       'Orchid and butterfly farm visit',
@@ -5484,7 +5807,7 @@ export const tours: Tour[] = [
       'Private tour',
       'Full day',
     ],
-    image: chiangMaiElephantTourImage,
+    image: elephantChiangMaiTour09Image,
     highlights: [
       'Mae Rim Elephant Home experience',
       'Bua Tong Sticky Waterfall',
@@ -5534,7 +5857,7 @@ export const tours: Tour[] = [
       'Private tour',
       'Full day',
     ],
-    image: chiangMaiElephantTourImage,
+    image: elephantChiangMaiTour10Image,
     highlights: [
       'Chiang Mai elephant care experience',
       'Bamboo rafting on Mae Wang Stream',
@@ -5583,7 +5906,7 @@ export const tours: Tour[] = [
       'Half day',
       'No riding',
     ],
-    image: chiangMaiElephantTourImage,
+    image: halfDayKantaElephantSanctuaryImage,
     highlights: [
       'Kanta Elephant Sanctuary',
       'Half-day elephant care program',
@@ -5633,7 +5956,7 @@ export const tours: Tour[] = [
       'Full day',
       'No riding',
     ],
-    image: chiangMaiElephantTourImage,
+    image: fullDayKantaElephantSanctuaryImage,
     highlights: [
       'Full-day Kanta Elephant Sanctuary program',
       'Feed, walk with, and observe elephants',
@@ -5683,7 +6006,7 @@ export const tours: Tour[] = [
       'Half day',
       'No riding',
     ],
-    image: chiangMaiElephantTourImage,
+    image: halfDayElephantJungleSanctuaryImage,
     highlights: [
       'Elephant Jungle Sanctuary',
       'Traditional Karen clothing',
@@ -5734,7 +6057,7 @@ export const tours: Tour[] = [
       'Full day',
       'No riding',
     ],
-    image: chiangMaiElephantTourImage,
+    image: fullDayElephantJungleSanctuaryImage,
     highlights: [
       'Full-day Elephant Jungle Sanctuary program',
       'Elephant behavior, history, and conservation lesson',
@@ -5783,7 +6106,7 @@ export const tours: Tour[] = [
       'Full day',
       'No riding',
     ],
-    image: chiangMaiElephantTourImage,
+    image: elephantBudget05Image,
     highlights: [
       'Elephant observation activities',
       'Doi Inthanon National Park',
@@ -5835,7 +6158,7 @@ export const tours: Tour[] = [
       'Full day',
       'No riding',
     ],
-    image: chiangMaiElephantTourImage,
+    image: elephantBudget16Image,
     highlights: [
       'Sunrise at Doi Suthep Temple',
       'Wat Doi Supphanyu visit',
@@ -5883,7 +6206,7 @@ export const tours: Tour[] = [
       'Canopy',
       'Unavailable',
     ],
-    image: chiangMaiZiplineTourImage,
+    image: zipline01Image,
     highlights: [
       '33 stations',
       '6 different platforms',
@@ -5932,7 +6255,7 @@ export const tours: Tour[] = [
       'Roller coaster',
       'Full day',
     ],
-    image: chiangMaiZiplineTourImage,
+    image: zipline02Image,
     highlights: [
       '31 stations',
       '6 different platforms',
@@ -6026,7 +6349,7 @@ export const tours: Tour[] = [
       'Slider',
       'Unavailable',
     ],
-    image: chiangMaiZiplineTourImage,
+    image: zipline04Image,
     highlights: [
       '32 stations',
       '8 different platforms',
@@ -6171,7 +6494,7 @@ export const tours: Tour[] = [
       'Triple safety',
       'Full day',
     ],
-    image: chiangMaiZiplineTourImage,
+    image: zipline07Image,
     highlights: [
       '24 to 45 platforms',
       'Family-friendly soft adventure',
@@ -6210,7 +6533,7 @@ export const tours: Tour[] = [
     price: '3,000 THB / person',
     category: 'chiang-mai-adventure',
     tags: ['Chiang Mai', 'Adventure', 'Sky Adventure', 'Flying', 'Half day'],
-    image: chiangMaiAdventureTourImage,
+    image: adventure01Image,
     highlights: [
       'Sky adventure experience',
       'Flying-style outdoor activity',
@@ -6255,7 +6578,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure02Image,
     highlights: [
       'Chiang Mai ATV riding',
       'Mountain streams and jungle trails',
@@ -6301,7 +6624,7 @@ export const tours: Tour[] = [
       'Mountain trails',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure03Image,
     highlights: [
       'Full-day mountain biking',
       'Nearby Chiang Mai mountains',
@@ -6348,7 +6671,7 @@ export const tours: Tour[] = [
       'Culture',
       'Half day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure04Image,
     highlights: [
       'Chiang Mai cycling route',
       'Ping River surroundings',
@@ -6394,7 +6717,7 @@ export const tours: Tour[] = [
       'Aerial views',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: flyingParamotorImage,
     highlights: [
       'Flying paramotor experience',
       'Experienced flight instructor',
@@ -6440,7 +6763,7 @@ export const tours: Tour[] = [
       'Rapids',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: chiangMaiWhiteWaterRaftingImage,
     highlights: [
       'Mae Taeng River rafting',
       'Level 4 and 5 rapids',
@@ -6486,7 +6809,7 @@ export const tours: Tour[] = [
       'Countryside',
       'Half day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: horseImage,
     highlights: [
       'Horse riding trail experience',
       'Local countryside landscape',
@@ -6531,7 +6854,7 @@ export const tours: Tour[] = [
       'Trainer',
       'Safety guidance',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure08Image,
     highlights: [
       'Standard shooting range',
       'Expert trainer support',
@@ -6578,7 +6901,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure09Image,
     highlights: [
       'Chiang Mai Fishing Park',
       'River, reservoir, and lake fishing context',
@@ -6624,7 +6947,7 @@ export const tours: Tour[] = [
       'Beginner lessons',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure10Image,
     highlights: [
       'Guided kayaking',
       'Free beginner lessons',
@@ -6670,7 +6993,7 @@ export const tours: Tour[] = [
       'Private tour',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: bambooRaftingInMaeWangImage,
     highlights: [
       'Private bamboo rafting tour',
       'Mae Wang River',
@@ -6716,7 +7039,7 @@ export const tours: Tour[] = [
       'Family friendly',
       'Half day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: tubeTrekWaterParkImage,
     highlights: [
       'Tube Trek Water Park',
       'Family-friendly water activities',
@@ -6762,7 +7085,7 @@ export const tours: Tour[] = [
       'Sightseeing',
       'Half day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure13Image,
     highlights: [
       'Drive a tuk tuk yourself',
       'Chiang Mai sightseeing route',
@@ -6810,7 +7133,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiAdventureTourImage,
+    image: adventure14Image,
     highlights: [
       'Doi Saket ATV route',
       '14-kilometer off-road journey',
@@ -6857,7 +7180,7 @@ export const tours: Tour[] = [
       'Hill tribe dance',
       'Cultural show',
     ],
-    image: chiangMaiRestaurantTourImage,
+    image: restaurant01Image,
     highlights: [
       'Old Chiangmai Cultural Center',
       'Traditional Khantoke dinner',
@@ -6905,7 +7228,7 @@ export const tours: Tour[] = [
       'Northern Thai food',
       'Cultural show',
     ],
-    image: chiangMaiRestaurantTourImage,
+    image: restaurant02Image,
     highlights: [
       'Khum Khantoke dinner',
       'Authentic Northern Thai food',
@@ -6952,7 +7275,7 @@ export const tours: Tour[] = [
       'Teak houses',
       'Scenic dining',
     ],
-    image: chiangMaiRestaurantTourImage,
+    image: restaurant03Image,
     highlights: [
       'Lunch cruise on the Ping River',
       'Relaxed river sightseeing',
@@ -6999,7 +7322,7 @@ export const tours: Tour[] = [
       'Thai dinner',
       'Scenic dining',
     ],
-    image: chiangMaiRestaurantTourImage,
+    image: restaurant04Image,
     highlights: [
       'Maeping Dinner Cruise',
       'Thai dinner aboard the cruise',
@@ -7046,7 +7369,7 @@ export const tours: Tour[] = [
       'Half day',
       'Cultural dining',
     ],
-    image: chiangMaiRestaurantTourImage,
+    image: restaurant05Image,
     highlights: [
       'River cruise to Wiang Kum Kam',
       'Forgotten royal city route',
@@ -7094,7 +7417,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiCookeryTourImage,
+    image: cookery01Image,
     highlights: [
       'Town cooking school',
       'Full-day class: 6 dishes',
@@ -7144,7 +7467,7 @@ export const tours: Tour[] = [
       'Recipe book',
       'Full day',
     ],
-    image: chiangMaiCookeryTourImage,
+    image: cookery02Image,
     highlights: [
       'Town full-day class: 6 dishes',
       'Farm full-day class: 6 dishes',
@@ -7195,7 +7518,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiCookeryTourImage,
+    image: cookery03Image,
     highlights: [
       'Thai cooking farm setting',
       'Pick fresh herbs',
@@ -7245,7 +7568,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf01Image,
     highlights: [
       'Alpine Golf Resort Chiangmai',
       'One of Chiang Mai best golf resorts',
@@ -7292,7 +7615,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf02Image,
     highlights: [
       'Chiangmai Highlands Golf and Spa Resort',
       'Challenging Northern Thailand course',
@@ -7341,7 +7664,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf03Image,
     highlights: [
       'Summit Green Valley Chiangmai Country Club',
       'Championship-caliber 18-hole course',
@@ -7389,7 +7712,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf04Image,
     highlights: [
       'Mae Jo Golf Resort and Spa',
       'About 20 minutes from Chiang Mai city',
@@ -7437,7 +7760,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf05Image,
     highlights: [
       'Chiang Mai Inthanon Golf and Natural Resort',
       'Panoramic Doi Inthanon views',
@@ -7485,7 +7808,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf06Image,
     highlights: [
       'Royal Chiang Mai Golf Resort',
       'Peaceful family retreat',
@@ -7534,7 +7857,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf07Image,
     highlights: [
       'Gassan Khuntan Golf and Resort',
       '18-hole par 72 course',
@@ -7583,7 +7906,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf08Image,
     highlights: [
       'Gassan Legacy Golf and Resort',
       'Lake course with paddy fields and mountains',
@@ -7631,7 +7954,7 @@ export const tours: Tour[] = [
       'Half day',
       'Full day',
     ],
-    image: chiangMaiGolfTourImage,
+    image: golf09Image,
     highlights: [
       'Gassan Panorama Golf Club',
       'Built around Chiang Mai largest lake',
@@ -7678,7 +8001,7 @@ export const tours: Tour[] = [
       'Nakhon Sawan',
       '3 days 2 nights',
     ],
-    image: chiangMaiToBangkokTourImage,
+    image: chiangMaiToBangkok01Image,
     highlights: [
       'Horse carting around Lampang city',
       'Srisatchanalai Historical Park',
@@ -7726,7 +8049,7 @@ export const tours: Tour[] = [
       'Ayutthaya',
       '3 days 2 nights',
     ],
-    image: chiangMaiToBangkokTourImage,
+    image: chiangMaiToBangkok02Image,
     highlights: [
       'Wat Phrathat Hariphunchai',
       'Elephant Conservation Centre',
@@ -7774,7 +8097,7 @@ export const tours: Tour[] = [
       'Kra Sae Cave',
       '4 days 3 nights',
     ],
-    image: chiangMaiToBangkokTourImage,
+    image: chiangMaiToBangkok03Image,
     highlights: [
       'Srisatchanalai and Sukhothai Historical Parks',
       'Kanchanaburi World War II Bridge',
@@ -7821,7 +8144,7 @@ export const tours: Tour[] = [
       'Damnoen Saduak Floating Market',
       '5 days 4 nights',
     ],
-    image: chiangMaiToBangkokTourImage,
+    image: chiangMaiToBangkok04Image,
     highlights: [
       'Srisatchanalai and Sukhothai Historical Parks',
       'Kanchanaburi World War II Bridge and War Cemetery',
@@ -7868,7 +8191,7 @@ export const tours: Tour[] = [
       'Trekking',
       'Rafting',
     ],
-    image: youthCampTourImage,
+    image: youthCampEleNatureImmersionImage,
     highlights: [
       'Six-day Mae Wang youth camp',
       'Elephant care activities',
@@ -7915,7 +8238,7 @@ export const tours: Tour[] = [
       'Cultural immersion',
       'Nature learning',
     ],
-    image: youthCampTourImage,
+    image: youthCampChiangDaoTrekCaveImage,
     highlights: [
       'Chiang Dao trekking',
       'Cave discovery',
@@ -7961,7 +8284,7 @@ export const tours: Tour[] = [
       'Conservation',
       'Hands-on craft',
     ],
-    image: youthCampTourImage,
+    image: youthCampElephantPoopooPaperParkImage,
     highlights: [
       'Eco-friendly outdoor museum',
       'Paper from recycled elephant dung fibers',
@@ -8007,7 +8330,7 @@ export const tours: Tour[] = [
       'Cultural learning',
       'Handicraft',
     ],
-    image: youthCampTourImage,
+    image: youthCampLannaAncientThaiArtsImage,
     highlights: [
       'Traditional Lanna craftsmanship',
       'Silverwork learning',
@@ -8055,7 +8378,7 @@ export const tours: Tour[] = [
       'Biodiversity',
       'Conservation',
     ],
-    image: youthCampTourImage,
+    image: youthCampQueenSirikitBotanicGardenImage,
     highlights: [
       'Canopy Walkway',
       'Glasshouse Complex',
@@ -8102,7 +8425,7 @@ export const tours: Tour[] = [
       'Butterfly garden',
       'Interactive museum',
     ],
-    image: youthCampTourImage,
+    image: youthCampSiamInsectZooImage,
     highlights: [
       'Interactive discovery museum',
       'Live insect breeding farm',
@@ -8150,7 +8473,7 @@ export const tours: Tour[] = [
       'Brewing',
       'Mountain village',
     ],
-    image: youthCampTourImage,
+    image: youthCampChiangMaiCoffeeFarmImage,
     highlights: [
       'Coffee tree-to-cup learning',
       'Planting activity',
@@ -8196,7 +8519,7 @@ export const tours: Tour[] = [
       'Mae Taeng',
       'Farming',
     ],
-    image: youthCampTourImage,
+    image: youthCampEarthHomeThailandImage,
     highlights: [
       'Natural building techniques',
       'Earth and clay construction',
@@ -8242,7 +8565,7 @@ export const tours: Tour[] = [
       'Handicraft',
       'Painting',
     ],
-    image: youthCampTourImage,
+    image: youthCampUmbrellaMakingCentreImage,
     highlights: [
       'Bo Sang umbrella craft village',
       'Mulberry paper and bamboo umbrella making',
@@ -8288,7 +8611,7 @@ export const tours: Tour[] = [
       'Doi Saket',
       'Ceramics',
     ],
-    image: youthCampTourImage,
+    image: youthCampChiangMaiCeladonImage,
     highlights: [
       'Celadon pottery learning',
       'Jade-green glaze tradition',
@@ -8334,7 +8657,7 @@ export const tours: Tour[] = [
       'Lanna craft',
       'Clay workshop',
     ],
-    image: youthCampTourImage,
+    image: youthCampBanMuangKungImage,
     highlights: [
       'Historic pottery village',
       'Traditional earthenware production',
@@ -8380,7 +8703,7 @@ export const tours: Tour[] = [
       'Paper craft',
       'Upcycling',
     ],
-    image: youthCampTourImage,
+    image: youthCampHandmadeNotebookShopImage,
     highlights: [
       'Traditional bookbinding',
       'Handmade notebook design',
@@ -8426,7 +8749,7 @@ export const tours: Tour[] = [
       'Baan Kang Wat',
       'Clay craft',
     ],
-    image: youthCampTourImage,
+    image: youthCampSateeCeramicImage,
     highlights: [
       'Hands-on ceramic workshop',
       'Create cups or small bowls',
@@ -8473,7 +8796,7 @@ export const tours: Tour[] = [
       'Textiles',
       'Jewelry making',
     ],
-    image: youthCampTourImage,
+    image: youthCampChiangmaiArtsCraftsWorkshopImage,
     highlights: [
       'Baan Kang Wat creative community',
       'Independent artist studios',
@@ -8522,7 +8845,7 @@ export const tours: Tour[] = [
       'Trekking',
       'Full day',
     ],
-    image: specialToursImage,
+    image: event01Image,
     highlights: [
       'Kew Mae Pan Nature Trail',
       'Doi Inthanon National Park',
@@ -8569,7 +8892,7 @@ export const tours: Tour[] = [
       'Winter season',
       'Full day',
     ],
-    image: specialToursImage,
+    image: event02Image,
     highlights: [
       'Khun Chang Kian cherry blossoms',
       'Thailand sakura season',
@@ -8616,7 +8939,7 @@ export const tours: Tour[] = [
       'Festival',
       'Winter season',
     ],
-    image: specialToursImage,
+    image: event03Image,
     highlights: [
       'Yi Peng Lantern Festival 2026',
       'CAD Cultural Center Lanna Ethnicity',
@@ -8663,7 +8986,7 @@ export const tours: Tour[] = [
       'Festival',
       '31 December 2026',
     ],
-    image: specialToursImage,
+    image: event04Image,
     highlights: [
       'Chiang Mai New Year Countdown 2027',
       'Cultural performances',
@@ -8710,7 +9033,7 @@ export const tours: Tour[] = [
       'Ringside',
       'VIP',
     ],
-    image: muayThaiTourImage,
+    image: muayThaiImage,
     highlights: [
       'Real Muay Thai kick boxing in Chiang Mai',
       'Thailand national combat sport',
@@ -8757,7 +9080,7 @@ export const tours: Tour[] = [
       'English-speaking driver',
       'Custom itinerary',
     ],
-    image: carRentalTourImage,
+    image: chiangMaiCarRentalWithDriverImage,
     highlights: [
       'Private car or van rental with driver only',
       'Sedan car for up to 3 passengers',

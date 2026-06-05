@@ -10,6 +10,16 @@ const nextConfig: NextConfig = {
         hostname: "www.zegotravel.com",
         pathname: "/images/image_programtour/**",
       },
+      {
+        protocol: "https",
+        hostname: "mychiangmaitour.com",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "mychiangmaitour.com",
+        pathname: "/wp-content/images/**",
+      },
     ],
   },
 };

@@ -1,7 +1,7 @@
 .section {
   position: relative;
   display: grid;
-  width: min(100%, var(--container, 64rem));
+  width: 100%;
   margin: 0 auto;
   padding: var(--section-y, 4rem) var(--pad-x, 2rem);
   gap: clamp(1.5rem, 3vw, 2.5rem);

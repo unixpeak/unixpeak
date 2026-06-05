@@ -1,7 +1,7 @@
 .page {
   display: grid;
   gap: 1.25rem;
-  width: min(100%, var(--container, 64rem));
+  width: 100%;
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 4rem) var(--pad-x, 2rem)
     var(--section-y, 4rem);

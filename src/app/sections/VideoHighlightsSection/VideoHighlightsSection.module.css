@@ -1,6 +1,6 @@
 .section {
   display: grid;
-  width: min(100%, var(--container));
+  width: 100%;
   margin: 0 auto;
   padding: var(--section-y) var(--pad-x);
   gap: 2rem;

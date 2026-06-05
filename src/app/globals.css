@@ -307,7 +307,6 @@ a:focus-visible {
    Global Layout Helpers
    ========================= */
 .container {
-  width: min(100%, var(--container));
   padding-inline: var(--pad-x);
   margin-inline: auto;
 }

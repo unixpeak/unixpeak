@@ -1,6 +1,6 @@
 .section {
   display: grid;
-  width: min(100%, var(--layout-max-width));
+  width: 100%;
   margin: 0 auto;
   gap: 30px;
   padding-right: var(--layout-gutter);
