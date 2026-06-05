@@ -39,9 +39,8 @@ export default function FaqPage() {
       </section>
 
       <section className={styles.faqGrid} aria-label="Frequently asked questions">
-        {faqItems.map((item, index) => (
+        {faqItems.map((item) => (
           <article className={styles.faqCard} key={item.question}>
-            <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
             <div className={styles.answerBlock}>
               <h2>{item.question}</h2>
               <p>{item.answer}</p>

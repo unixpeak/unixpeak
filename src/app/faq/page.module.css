@@ -62,16 +62,6 @@
   padding: clamp(22px, 4vw, 30px);
 }
 
-.number {
-  justify-self: start;
-  border-radius: var(--radius-pill);
-  background: var(--color-accent-soft);
-  color: var(--color-accent-strong);
-  font-size: 1rem;
-  font-weight: 850;
-  padding: 7px 10px;
-}
-
 .answerBlock,
 .answerBlockThai {
   display: grid;
