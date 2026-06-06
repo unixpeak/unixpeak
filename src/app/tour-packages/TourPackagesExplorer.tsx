@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import type { TourPackage } from '@/lib/tour-packages'
 import {
   getPackageStatus,
+  isFullPeriod,
   isOpenPeriod,
   TOUR_PACKAGE_PAGE_SIZE,
   type TourPackagePage,
@@ -99,6 +100,64 @@ function formatStatus(status: string) {
   return status || 'รอสถานะ'
 }
 
+function getPeriodSeatLabel(period: TourPackage['periods'][number]) {
+  if (isOpenPeriod(period)) {
+    return `ว่าง ${period.availableSeats ?? 0} ที่`
+  }
+
+  if (isFullPeriod(period)) {
+    return 'เต็ม'
+  }
+
+  return formatStatus(period.status)
+}
+
+function getPeriodAvailabilityClass(period: TourPackage['periods'][number]) {
+  if (isOpenPeriod(period)) {
+    return styles.periodOpen
+  }
+
+  if (isFullPeriod(period)) {
+    return styles.periodFull
+  }
+
+  return styles.periodClosed
+}
+
+function getPackageAvailabilityLabel(tourPackage: TourPackage) {
+  const fullPeriods = tourPackage.periods.filter(isFullPeriod).length
+
+  if (fullPeriods > 0 && tourPackage.openPeriods > 0) {
+    return 'บางรอบเต็ม'
+  }
+
+  if (fullPeriods > 0) {
+    return 'เต็ม'
+  }
+
+  return formatStatus(getPackageStatus(tourPackage))
+}
+
+function getVisiblePeriods(tourPackage: TourPackage) {
+  const today = new Date().toISOString().slice(0, 10)
+  const upcomingPeriods = tourPackage.periods.filter(
+    (period) => !period.startDate || period.startDate >= today,
+  )
+  const periods =
+    upcomingPeriods.length > 0 ? upcomingPeriods : tourPackage.periods
+  const firstPeriods = periods.slice(0, 4)
+  const firstFullPeriod = periods.find(isFullPeriod)
+
+  if (
+    !firstFullPeriod ||
+    firstPeriods.some((period) => period.id === firstFullPeriod.id)
+  ) {
+    return firstPeriods
+  }
+
+  return [...periods.slice(0, 3), firstFullPeriod]
+}
+
 export function TourPackagesExplorer({
   countryOptions,
   initialPackages,
@@ -109,7 +168,7 @@ export function TourPackagesExplorer({
   const [search, setSearch] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('all')
   const [selectedStatus, setSelectedStatus] = useState('all')
-  const [openSeatsOnly, setOpenSeatsOnly] = useState(true)
+  const [openSeatsOnly, setOpenSeatsOnly] = useState(false)
   const [sortMode, setSortMode] = useState<TourPackageSortMode>('next-date')
   const [visiblePackages, setVisiblePackages] = useState(initialPackages)
   const [totalCount, setTotalCount] = useState(totalPackages)
@@ -314,10 +373,7 @@ export function TourPackagesExplorer({
           {visiblePackages.map((tourPackage, index) => {
             const nextPeriod = tourPackage.nextPeriod
             const imageSrc = tourPackage.imageUrl || fallbackImage
-            const openPeriods = tourPackage.periods.filter(isOpenPeriod)
-            const visiblePeriods = (
-              openPeriods.length > 0 ? openPeriods : tourPackage.periods
-            ).slice(0, 3)
+            const visiblePeriods = getVisiblePeriods(tourPackage)
             const visibleFlights = tourPackage.flights.slice(0, 2)
             const visibleItinerary = tourPackage.itinerary
               .filter((day) => day.description)
@@ -385,7 +441,7 @@ export function TourPackagesExplorer({
 
                     <div>
                       <dt>สถานะ</dt>
-                      <dd>{formatStatus(getPackageStatus(tourPackage))}</dd>
+                      <dd>{getPackageAvailabilityLabel(tourPackage)}</dd>
                     </div>
                   </dl>
 
@@ -409,7 +465,16 @@ export function TourPackagesExplorer({
                                   period.endDate,
                                 )}
                               </span>
-                              <strong>{formatPrice(period.price)}</strong>
+                              <div className={styles.periodInfo}>
+                                <strong>{formatPrice(period.price)}</strong>
+                                <span
+                                  className={`${styles.periodBadge} ${getPeriodAvailabilityClass(
+                                    period,
+                                  )}`}
+                                >
+                                  {getPeriodSeatLabel(period)}
+                                </span>
+                              </div>
                             </li>
                           ))}
                         </ul>

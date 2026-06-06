@@ -156,10 +156,24 @@ function compareIsoDate(left: string, right: string) {
   return left.localeCompare(right)
 }
 
+function isClosedPeriod(period: TourPackagePeriod) {
+  return period.status.toLowerCase().includes('close')
+}
+
+function isFullPeriod(period: TourPackagePeriod) {
+  return (
+    period.status.toLowerCase().includes('full') ||
+    (!isClosedPeriod(period) &&
+      typeof period.availableSeats === 'number' &&
+      period.availableSeats <= 0)
+  )
+}
+
 function isOpenPeriod(period: TourPackagePeriod) {
   return (
     (period.availableSeats ?? 0) > 0 &&
-    !period.status.toLowerCase().includes('close')
+    !isClosedPeriod(period) &&
+    !isFullPeriod(period)
   )
 }
 

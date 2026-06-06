@@ -528,6 +528,48 @@
   line-height: 1.3;
 }
 
+.periodInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.periodBadge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.32rem 0.48rem;
+}
+
+.detailBlock .periodBadge {
+  font-size: 0.76rem;
+  line-height: 1;
+}
+
+.periodOpen {
+  border-color: rgba(0, 125, 120, 0.24);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.periodFull {
+  border-color: rgba(185, 85, 85, 0.24);
+  background: rgba(255, 235, 235, 0.92);
+  color: var(--bad);
+}
+
+.periodClosed {
+  border-color: var(--border);
+  background: rgba(237, 242, 242, 0.9);
+  color: var(--muted);
+}
+
 .itinerary {
   border-top: 1px solid var(--border-soft);
   padding-top: 0.95rem;

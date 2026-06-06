@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContactsBox, type ContactBoxLink } from "@/components/ContactsBox/ContactsBox";
 import { paymentMethods } from "@/data/payments";
 import { siteInfo } from "@/data/site";
+import { FAB } from "./FAB";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -145,6 +146,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <FAB />
     </footer>
   );
 }

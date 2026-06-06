@@ -26,7 +26,7 @@ export const defaultTourPackageQuery: Required<TourPackageQueryParams> = {
   search: '',
   country: 'all',
   status: 'all',
-  openSeatsOnly: true,
+  openSeatsOnly: false,
   sort: 'next-date',
   offset: 0,
   limit: TOUR_PACKAGE_PAGE_SIZE,
@@ -37,13 +37,31 @@ function normalizeSearch(value: string) {
 }
 
 export function getPackageStatus(tourPackage: TourPackage) {
+  if (tourPackage.nextPeriod && isFullPeriod(tourPackage.nextPeriod)) {
+    return 'Full'
+  }
+
   return tourPackage.nextPeriod?.status || 'Available'
+}
+
+export function isClosedPeriod(period: TourPackage['periods'][number]) {
+  return period.status.toLowerCase().includes('close')
+}
+
+export function isFullPeriod(period: TourPackage['periods'][number]) {
+  return (
+    period.status.toLowerCase().includes('full') ||
+    (!isClosedPeriod(period) &&
+      typeof period.availableSeats === 'number' &&
+      period.availableSeats <= 0)
+  )
 }
 
 export function isOpenPeriod(period: TourPackage['periods'][number]) {
   return (
     (period.availableSeats ?? 0) > 0 &&
-    !period.status.toLowerCase().includes('close')
+    !isClosedPeriod(period) &&
+    !isFullPeriod(period)
   )
 }
 
@@ -97,7 +115,13 @@ export function getTourPackageCountries(packages: TourPackage[]) {
 export function getTourPackageStatuses(packages: TourPackage[]) {
   const statuses = new Set<string>()
 
-  packages.forEach((tourPackage) => statuses.add(getPackageStatus(tourPackage)))
+  packages.forEach((tourPackage) => {
+    statuses.add(getPackageStatus(tourPackage))
+
+    tourPackage.periods.forEach((period) => {
+      statuses.add(isFullPeriod(period) ? 'Full' : period.status)
+    })
+  })
 
   return [...statuses]
     .filter(Boolean)
@@ -126,7 +150,12 @@ export function queryTourPackages(
     .filter(
       (tourPackage) =>
         normalizedQuery.status === 'all' ||
-        getPackageStatus(tourPackage) === normalizedQuery.status,
+        getPackageStatus(tourPackage) === normalizedQuery.status ||
+        tourPackage.periods.some((period) =>
+          isFullPeriod(period)
+            ? normalizedQuery.status === 'Full'
+            : period.status === normalizedQuery.status,
+        ),
     )
     .filter(
       (tourPackage) =>
