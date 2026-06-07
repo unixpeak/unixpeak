@@ -143,6 +143,11 @@
   line-height: 1;
 }
 
+.heroPanel .heroTimestamp {
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
 .heroPanel span {
   color: var(--muted);
   font-size: 0.9rem;
@@ -320,6 +325,7 @@
 
 .packageGrid {
   display: grid;
+  align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
   gap: clamp(0.9rem, 2vw, 1.25rem);
 }
@@ -347,18 +353,19 @@
 
 .packageImageWrap {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: var(--package-image-ratio, 16 / 10);
   overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
   background: var(--bg-2);
 }
 
 .packageImage {
+  z-index: 0;
   object-fit: cover;
-  transition: transform 360ms ease;
 }
 
 .packageCard:hover .packageImage {
-  transform: scale(1.035);
+  transform: none;
 }
 
 .cardBadges {
@@ -366,6 +373,7 @@
   left: 0.8rem;
   right: 0.8rem;
   bottom: 0.8rem;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;

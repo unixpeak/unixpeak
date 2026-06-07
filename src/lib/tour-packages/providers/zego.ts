@@ -95,7 +95,7 @@ function normalizePeriod(value: UnknownRecord): TourPackagePeriod {
     code: asString(value.PeriodCode),
     startDate: asString(value.PeriodStartDate),
     endDate: asString(value.PeriodEndDate),
-    status: asString(value.PeriodStatus) || 'Available',
+    status: asString(value.PeriodStatus) || 'Book',
     airport: asString(value.Airport),
     groupSize: asNumber(value.GroupSize),
     bookedSeats: asNumber(value.Book),
@@ -230,11 +230,12 @@ function normalizeProgramTour(value: unknown): TourPackage | null {
       .map((period) => period.price)
       .filter((price): price is number => typeof price === 'number')
       .sort((left, right) => left - right)[0] ?? null
-  const availableSeats = periods.reduce(
+  const openPeriodsList = periods.filter(isOpenPeriod)
+  const availableSeats = openPeriodsList.reduce(
     (total, period) => total + Math.max(period.availableSeats ?? 0, 0),
     0,
   )
-  const openPeriods = periods.filter(isOpenPeriod).length
+  const openPeriods = openPeriodsList.length
 
   return {
     provider: zegoProvider,

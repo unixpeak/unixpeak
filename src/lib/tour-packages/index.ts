@@ -20,6 +20,10 @@ export async function getTourPackages(): Promise<TourPackageLoadResult> {
 
 export type {
   TourPackage,
+  TourPackageCardFlight,
+  TourPackageCardItineraryDay,
+  TourPackageCardPeriod,
+  TourPackageCardSummary,
   TourPackageFlight,
   TourPackageItineraryDay,
   TourPackageLoadResult,

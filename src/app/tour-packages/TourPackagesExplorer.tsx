@@ -1,9 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import type { CSSProperties, SyntheticEvent } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { TourPackage } from '@/lib/tour-packages'
+import type { TourPackageCardSummary } from '@/lib/tour-packages'
 import {
+  defaultTourPackageQuery,
   getPackageStatus,
   isFullPeriod,
   isOpenPeriod,
@@ -15,7 +17,7 @@ import styles from './page.module.css'
 
 type TourPackagesExplorerProps = {
   countryOptions: string[]
-  initialPackages: TourPackage[]
+  initialPackages: TourPackageCardSummary[]
   lineHref: string
   statusOptions: string[]
   totalPackages: number
@@ -85,7 +87,7 @@ function formatTime(value: string) {
 function formatStatus(status: string) {
   const normalizedStatus = status.trim().toLowerCase()
 
-  if (normalizedStatus === 'book') {
+  if (normalizedStatus === 'book' || normalizedStatus === 'available') {
     return 'เปิดจอง'
   }
 
@@ -97,10 +99,10 @@ function formatStatus(status: string) {
     return 'เต็ม'
   }
 
-  return status || 'รอสถานะ'
+  return status || 'เปิดจอง'
 }
 
-function getPeriodSeatLabel(period: TourPackage['periods'][number]) {
+function getPeriodSeatLabel(period: TourPackageCardSummary['periods'][number]) {
   if (isOpenPeriod(period)) {
     return `ว่าง ${period.availableSeats ?? 0} ที่`
   }
@@ -112,7 +114,9 @@ function getPeriodSeatLabel(period: TourPackage['periods'][number]) {
   return formatStatus(period.status)
 }
 
-function getPeriodAvailabilityClass(period: TourPackage['periods'][number]) {
+function getPeriodAvailabilityClass(
+  period: TourPackageCardSummary['periods'][number],
+) {
   if (isOpenPeriod(period)) {
     return styles.periodOpen
   }
@@ -124,8 +128,8 @@ function getPeriodAvailabilityClass(period: TourPackage['periods'][number]) {
   return styles.periodClosed
 }
 
-function getPackageAvailabilityLabel(tourPackage: TourPackage) {
-  const fullPeriods = tourPackage.periods.filter(isFullPeriod).length
+function getPackageAvailabilityLabel(tourPackage: TourPackageCardSummary) {
+  const fullPeriods = tourPackage.fullPeriods
 
   if (fullPeriods > 0 && tourPackage.openPeriods > 0) {
     return 'บางรอบเต็ม'
@@ -138,24 +142,8 @@ function getPackageAvailabilityLabel(tourPackage: TourPackage) {
   return formatStatus(getPackageStatus(tourPackage))
 }
 
-function getVisiblePeriods(tourPackage: TourPackage) {
-  const today = new Date().toISOString().slice(0, 10)
-  const upcomingPeriods = tourPackage.periods.filter(
-    (period) => !period.startDate || period.startDate >= today,
-  )
-  const periods =
-    upcomingPeriods.length > 0 ? upcomingPeriods : tourPackage.periods
-  const firstPeriods = periods.slice(0, 4)
-  const firstFullPeriod = periods.find(isFullPeriod)
-
-  if (
-    !firstFullPeriod ||
-    firstPeriods.some((period) => period.id === firstFullPeriod.id)
-  ) {
-    return firstPeriods
-  }
-
-  return [...periods.slice(0, 3), firstFullPeriod]
+function getVisiblePeriods(tourPackage: TourPackageCardSummary) {
+  return tourPackage.periods
 }
 
 export function TourPackagesExplorer({
@@ -165,9 +153,10 @@ export function TourPackagesExplorer({
   statusOptions,
   totalPackages,
 }: TourPackagesExplorerProps) {
+  const [imageRatios, setImageRatios] = useState<Record<string, number>>({})
   const [search, setSearch] = useState('')
   const [selectedCountry, setSelectedCountry] = useState('all')
-  const [selectedStatus, setSelectedStatus] = useState('all')
+  const [selectedStatus, setSelectedStatus] = useState(defaultTourPackageQuery.status)
   const [openSeatsOnly, setOpenSeatsOnly] = useState(false)
   const [sortMode, setSortMode] = useState<TourPackageSortMode>('next-date')
   const [visiblePackages, setVisiblePackages] = useState(initialPackages)
@@ -178,6 +167,11 @@ export function TourPackagesExplorer({
   const didMount = useRef(false)
 
   const hasMore = visiblePackages.length < totalCount
+  const statusOptionsWithDefault = statusOptions.includes(
+    defaultTourPackageQuery.status,
+  )
+    ? statusOptions
+    : [defaultTourPackageQuery.status, ...statusOptions]
 
   const buildPackagesUrl = useCallback(
     (offset: number) => {
@@ -206,9 +200,35 @@ export function TourPackagesExplorer({
         throw new Error('โหลดแพ็กเกจทัวร์ไม่ได้ กรุณาลองใหม่อีกครั้ง')
       }
 
-      return (await response.json()) as TourPackagePage
+      return (await response.json()) as TourPackagePage<TourPackageCardSummary>
     },
     [buildPackagesUrl],
+  )
+
+  const handlePackageImageLoad = useCallback(
+    (imageKey: string, event: SyntheticEvent<HTMLImageElement>) => {
+      const { naturalHeight, naturalWidth } = event.currentTarget
+
+      if (!naturalHeight || !naturalWidth) {
+        return
+      }
+
+      const nextRatio = naturalWidth / naturalHeight
+
+      setImageRatios((currentRatios) => {
+        const currentRatio = currentRatios[imageKey]
+
+        if (currentRatio && Math.abs(currentRatio - nextRatio) < 0.001) {
+          return currentRatios
+        }
+
+        return {
+          ...currentRatios,
+          [imageKey]: nextRatio,
+        }
+      })
+    },
+    [],
   )
 
   useEffect(() => {
@@ -322,7 +342,7 @@ export function TourPackagesExplorer({
               onChange={(event) => setSelectedStatus(event.target.value)}
             >
               <option value="all">ทุกสถานะ</option>
-              {statusOptions.map((status) => (
+              {statusOptionsWithDefault.map((status) => (
                 <option key={status} value={status}>
                   {formatStatus(status)}
                 </option>
@@ -340,7 +360,6 @@ export function TourPackagesExplorer({
             >
               <option value="next-date">วันเดินทางใกล้สุด</option>
               <option value="price-low">ราคาต่ำสุด</option>
-              <option value="seats-high">ที่นั่งมากสุด</option>
               <option value="name">ชื่อแพ็กเกจ</option>
             </select>
           </label>
@@ -373,6 +392,11 @@ export function TourPackagesExplorer({
           {visiblePackages.map((tourPackage, index) => {
             const nextPeriod = tourPackage.nextPeriod
             const imageSrc = tourPackage.imageUrl || fallbackImage
+            const imageRatioKey = `${tourPackage.code}:${imageSrc}`
+            const imageRatio = imageRatios[imageRatioKey]
+            const imageStyle = imageRatio
+              ? ({ '--package-image-ratio': String(imageRatio) } as CSSProperties)
+              : undefined
             const visiblePeriods = getVisiblePeriods(tourPackage)
             const visibleFlights = tourPackage.flights.slice(0, 2)
             const visibleItinerary = tourPackage.itinerary
@@ -381,7 +405,7 @@ export function TourPackagesExplorer({
 
             return (
               <article className={styles.packageCard} key={tourPackage.code}>
-                <div className={styles.packageImageWrap}>
+                <div className={styles.packageImageWrap} style={imageStyle}>
                   <Image
                     className={styles.packageImage}
                     src={imageSrc}
@@ -389,6 +413,8 @@ export function TourPackagesExplorer({
                     fill
                     fetchPriority={index < 2 ? 'high' : 'auto'}
                     loading={index < 2 ? 'eager' : 'lazy'}
+                    onLoad={(event) => handlePackageImageLoad(imageRatioKey, event)}
+                    quality={70}
                     sizes="(max-width: 760px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
 
@@ -435,7 +461,7 @@ export function TourPackagesExplorer({
                     </div>
 
                     <div>
-                      <dt>ที่นั่ง</dt>
+                      <dt>ว่างรวม</dt>
                       <dd>{tourPackage.availableSeats}</dd>
                     </div>
 

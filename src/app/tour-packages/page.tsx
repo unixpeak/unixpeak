@@ -7,7 +7,7 @@ import type { TourPackage } from '@/lib/tour-packages'
 import {
   getTourPackageCountries,
   getTourPackageStatuses,
-  queryTourPackages,
+  queryTourPackageCards,
 } from '@/lib/tour-packages/query'
 import { TourPackagesExplorer } from './TourPackagesExplorer'
 import styles from './page.module.css'
@@ -56,6 +56,30 @@ function formatDateTime(value: string) {
   }).format(date)
 }
 
+function formatCompactDate(value: string) {
+  if (!value) {
+    return 'ยังไม่มีข้อมูล'
+  }
+
+  const normalizedValue = value.includes('T')
+    ? value
+    : value.includes(' ')
+      ? `${value.replace(' ', 'T')}+07:00`
+      : `${value}T00:00:00+07:00`
+  const date = new Date(normalizedValue)
+
+  if (Number.isNaN(date.getTime())) {
+    return value
+  }
+
+  return new Intl.DateTimeFormat('th-TH', {
+    day: '2-digit',
+    month: 'short',
+    year: '2-digit',
+    timeZone: 'Asia/Bangkok',
+  }).format(date)
+}
+
 function formatDate(value: string) {
   if (!value) {
     return 'รอวันเดินทาง'
@@ -79,13 +103,9 @@ function getPackageStats(packages: TourPackage[]) {
   const countries = new Set(
     packages.map((tourPackage) => tourPackage.countryName).filter(Boolean),
   )
-  const openPackages = packages.filter(
+  const openPackageCount = packages.filter(
     (tourPackage) => tourPackage.openPeriods > 0,
   ).length
-  const totalSeats = packages.reduce(
-    (total, tourPackage) => total + tourPackage.availableSeats,
-    0,
-  )
   const nextDeparture =
     packages
       .map((tourPackage) => tourPackage.nextPeriod?.startDate ?? '')
@@ -94,8 +114,7 @@ function getPackageStats(packages: TourPackage[]) {
 
   return {
     countries: countries.size,
-    openPackages,
-    totalSeats,
+    openPackageCount,
     nextDeparture,
   }
 }
@@ -104,7 +123,7 @@ export default async function TourPackagesPage() {
   await connection()
 
   const packageData = await getTourPackages()
-  const initialPackagePage = queryTourPackages(packageData.packages)
+  const initialPackagePage = queryTourPackageCards(packageData.packages)
   const stats = getPackageStats(packageData.packages)
   const lineLink =
     siteInfo.socialLinks.find((link) => link.label === 'LINE OA')?.href ??
@@ -155,13 +174,15 @@ export default async function TourPackagesPage() {
           </div>
 
           <div>
-            <strong>{formatNumber(stats.openPackages)}</strong>
-            <span>ยังมีที่นั่ง</span>
+            <strong>{formatNumber(stats.openPackageCount)}</strong>
+            <span>แพ็กเกจเปิดจอง</span>
           </div>
 
           <div>
-            <strong>{formatNumber(stats.totalSeats)}</strong>
-            <span>ที่นั่งรวม</span>
+            <strong className={styles.heroTimestamp}>
+              {formatCompactDate(packageData.fetchedAt)}
+            </strong>
+            <span>อัปเดตล่าสุด</span>
           </div>
         </div>
       </section>

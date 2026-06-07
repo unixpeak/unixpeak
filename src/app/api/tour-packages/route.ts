@@ -2,7 +2,7 @@ import type { NextRequest } from 'next/server'
 import { getTourPackages } from '@/lib/tour-packages'
 import {
   defaultTourPackageQuery,
-  queryTourPackages,
+  queryTourPackageCards,
   type TourPackageSortMode,
 } from '@/lib/tour-packages/query'
 
@@ -19,7 +19,6 @@ function getSortParam(value: string | null): TourPackageSortMode {
   if (
     value === 'next-date' ||
     value === 'price-low' ||
-    value === 'seats-high' ||
     value === 'name'
   ) {
     return value
@@ -32,7 +31,7 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const openSeatsOnlyParam = searchParams.get('openSeatsOnly')
   const packageData = await getTourPackages()
-  const page = queryTourPackages(packageData.packages, {
+  const page = queryTourPackageCards(packageData.packages, {
     search: searchParams.get('search') ?? defaultTourPackageQuery.search,
     country: searchParams.get('country') ?? defaultTourPackageQuery.country,
     status: searchParams.get('status') ?? defaultTourPackageQuery.status,

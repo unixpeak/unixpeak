@@ -79,6 +79,61 @@ export type TourPackage = {
   updatedAt: string
 }
 
+export type TourPackageCardPeriod = Pick<
+  TourPackagePeriod,
+  | 'id'
+  | 'code'
+  | 'startDate'
+  | 'endDate'
+  | 'status'
+  | 'availableSeats'
+  | 'price'
+  | 'promotion'
+  | 'confirmed'
+>
+
+export type TourPackageCardFlight = Pick<
+  TourPackageFlight,
+  | 'airlineCode'
+  | 'flightNo'
+  | 'route'
+  | 'departureTime'
+  | 'arrivalTime'
+>
+
+export type TourPackageCardItineraryDay = Pick<
+  TourPackageItineraryDay,
+  'id' | 'day' | 'description'
+>
+
+export type TourPackageCardSummary = Pick<
+  TourPackage,
+  | 'provider'
+  | 'id'
+  | 'code'
+  | 'name'
+  | 'countryName'
+  | 'days'
+  | 'nights'
+  | 'airlineCode'
+  | 'airlineName'
+  | 'locations'
+  | 'highlight'
+  | 'imageUrl'
+  | 'pdfUrl'
+  | 'wordUrl'
+  | 'minPrice'
+  | 'availableSeats'
+  | 'totalPeriods'
+  | 'openPeriods'
+> & {
+  fullPeriods: number
+  nextPeriod: TourPackageCardPeriod | null
+  periods: TourPackageCardPeriod[]
+  flights: TourPackageCardFlight[]
+  itinerary: TourPackageCardItineraryDay[]
+}
+
 export type TourPackageSourceResult = {
   provider: TourPackageProvider
   packages: TourPackage[]
