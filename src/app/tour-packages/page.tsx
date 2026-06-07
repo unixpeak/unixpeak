@@ -33,29 +33,6 @@ function formatNumber(value: number) {
   }).format(value)
 }
 
-function formatDateTime(value: string) {
-  if (!value) {
-    return 'ยังไม่มีข้อมูล'
-  }
-
-  const normalizedValue = value.includes('T')
-    ? value
-    : value.includes(' ')
-      ? `${value.replace(' ', 'T')}+07:00`
-      : `${value}T00:00:00+07:00`
-  const date = new Date(normalizedValue)
-
-  if (Number.isNaN(date.getTime())) {
-    return value
-  }
-
-  return new Intl.DateTimeFormat('th-TH', {
-    dateStyle: 'medium',
-    timeStyle: 'short',
-    timeZone: 'Asia/Bangkok',
-  }).format(date)
-}
-
 function formatCompactDate(value: string) {
   if (!value) {
     return 'ยังไม่มีข้อมูล'
@@ -80,25 +57,6 @@ function formatCompactDate(value: string) {
   }).format(date)
 }
 
-function formatDate(value: string) {
-  if (!value) {
-    return 'รอวันเดินทาง'
-  }
-
-  const date = new Date(`${value}T00:00:00+07:00`)
-
-  if (Number.isNaN(date.getTime())) {
-    return value
-  }
-
-  return new Intl.DateTimeFormat('th-TH', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-    timeZone: 'Asia/Bangkok',
-  }).format(date)
-}
-
 function getPackageStats(packages: TourPackage[]) {
   const countries = new Set(
     packages.map((tourPackage) => tourPackage.countryName).filter(Boolean),
@@ -106,16 +64,10 @@ function getPackageStats(packages: TourPackage[]) {
   const openPackageCount = packages.filter(
     (tourPackage) => tourPackage.openPeriods > 0,
   ).length
-  const nextDeparture =
-    packages
-      .map((tourPackage) => tourPackage.nextPeriod?.startDate ?? '')
-      .filter(Boolean)
-      .sort()[0] ?? ''
 
   return {
     countries: countries.size,
     openPackageCount,
-    nextDeparture,
   }
 }
 
@@ -184,41 +136,6 @@ export default async function TourPackagesPage() {
             </strong>
             <span>อัปเดตล่าสุด</span>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.sourceStrip} aria-label="สถานะแหล่งข้อมูลแพ็กเกจ">
-        <div>
-          <span>แหล่งข้อมูล</span>
-          <strong>
-            {packageData.sources
-              .map((source) => source.provider.name)
-              .join(', ') || 'ยังไม่ได้เชื่อมต่อ'}
-          </strong>
-        </div>
-
-        <div>
-          <span>วันเดินทางเร็วสุด</span>
-          <strong>
-            {stats.nextDeparture
-              ? formatDate(stats.nextDeparture)
-              : 'รอวันเดินทาง'}
-          </strong>
-        </div>
-
-        <div>
-          <span>ซิงก์ล่าสุด</span>
-          <strong>{formatDateTime(packageData.fetchedAt)}</strong>
-        </div>
-
-        <div>
-          <span>อัปเดตจาก supplier</span>
-          <strong>
-            {formatDateTime(
-              packageData.sources.find((source) => source.latestUpdate)
-                ?.latestUpdate ?? '',
-            )}
-          </strong>
         </div>
       </section>
 

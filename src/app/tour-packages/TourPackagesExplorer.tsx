@@ -390,7 +390,6 @@ export function TourPackagesExplorer({
       {visiblePackages.length > 0 ? (
         <section className={styles.packageGrid} aria-label="รายการแพ็กเกจทัวร์">
           {visiblePackages.map((tourPackage, index) => {
-            const nextPeriod = tourPackage.nextPeriod
             const imageSrc = tourPackage.imageUrl || fallbackImage
             const imageRatioKey = `${tourPackage.code}:${imageSrc}`
             const imageRatio = imageRatios[imageRatioKey]
@@ -417,12 +416,6 @@ export function TourPackagesExplorer({
                     quality={70}
                     sizes="(max-width: 760px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
-
-                  <div className={styles.cardBadges}>
-                    <span>{tourPackage.provider.name}</span>
-                    {nextPeriod?.promotion ? <span>โปรโมชัน</span> : null}
-                    {nextPeriod?.confirmed ? <span>คอนเฟิร์มแล้ว</span> : null}
-                  </div>
                 </div>
 
                 <div className={styles.packageContent}>
