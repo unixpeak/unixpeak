@@ -102,7 +102,7 @@ export const siteInfo: SiteInfo = {
     },
     {
       label: 'ทัวร์ต่างประเทศ',
-      labelTh: 'à¹à¸žà¹‡à¸à¹€à¸à¸ˆà¸—à¸±à¸§à¸£à¹Œ',
+      labelTh: 'แพ็กเกจทัวร์',
       href: '/tour-packages',
     },
     {
