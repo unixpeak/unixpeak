@@ -113,7 +113,6 @@
 .storyCopy h2 {
   font-size: clamp(2rem, 4vw, var(--fs-section-title));
   line-height: 1.12;
-  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 

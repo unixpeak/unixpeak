@@ -45,7 +45,6 @@
   font-size: var(--fs-section-title, 2.4rem);
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
@@ -129,7 +128,6 @@
   font-size: var(--fs-card-title, 1.35rem);
   font-weight: 850;
   line-height: 1.22;
-  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 

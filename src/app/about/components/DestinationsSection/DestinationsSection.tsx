@@ -1,5 +1,19 @@
 import { siteInfo } from '@/data/site'
+import {
+  Building2,
+  Landmark,
+  MapPin,
+  Mountain,
+  type LucideIcon,
+} from 'lucide-react'
 import styles from './DestinationsSection.module.css'
+
+const destinationIcons: Record<string, LucideIcon> = {
+  'Chiang Mai': Mountain,
+  Bangkok: Building2,
+  'Chiang Rai': MapPin,
+  Ayutthaya: Landmark,
+}
 
 export function DestinationsSection() {
   return (
@@ -16,12 +30,17 @@ export function DestinationsSection() {
       </div>
 
       <ul className={styles.destinationList}>
-        {siteInfo.destinations.map((destination) => (
-          <li className={styles.destinationItem} key={destination.name}>
-            <span>{destination.name}</span>
-            <small>{destination.nameTh}</small>
-          </li>
-        ))}
+        {siteInfo.destinations.map((destination) => {
+          const Icon = destinationIcons[destination.name] ?? MapPin
+
+          return (
+            <li className={styles.destinationItem} key={destination.name}>
+              <Icon className={styles.destinationIcon} aria-hidden="true" />
+              <span>{destination.name}</span>
+              <small>{destination.nameTh}</small>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )

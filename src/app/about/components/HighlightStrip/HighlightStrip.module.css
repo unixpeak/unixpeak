@@ -15,6 +15,13 @@
   padding: 1rem;
 }
 
+.highlightIcon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent-strong);
+  stroke-width: 1.8;
+}
+
 .highlightCard strong {
   color: var(--accent-strong);
   font-size: clamp(1.4rem, 3vw, 2rem);

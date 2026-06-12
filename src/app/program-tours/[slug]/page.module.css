@@ -66,7 +66,6 @@
   font-size: var(--fs-hero-title, 3.2rem);
   font-weight: 850;
   line-height: 0.98;
-  letter-spacing: -0.045em;
   text-wrap: balance;
 }
 
@@ -210,7 +209,6 @@
   font-size: var(--fs-section-title, 2.4rem);
   font-weight: 850;
   line-height: 1.06;
-  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 

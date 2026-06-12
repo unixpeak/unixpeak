@@ -221,7 +221,6 @@ h5,
 h6 {
   font-family: var(--font-display);
   color: var(--text);
-  letter-spacing: -0.025em;
 }
 
 h1 {

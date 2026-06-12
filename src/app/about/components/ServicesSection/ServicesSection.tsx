@@ -1,5 +1,23 @@
 import { siteInfo } from '@/data/site'
+import {
+  BriefcaseBusiness,
+  Building2,
+  Handshake,
+  Route,
+  SlidersHorizontal,
+  UsersRound,
+  type LucideIcon,
+} from 'lucide-react'
 import styles from './ServicesSection.module.css'
+
+const serviceIcons: Record<string, LucideIcon> = {
+  'Tailor-made travel': SlidersHorizontal,
+  'Private tours': Route,
+  'Group tours': UsersRound,
+  'B2B travel': Handshake,
+  MICE: Building2,
+  'Corporate trips': BriefcaseBusiness,
+}
 
 export function ServicesSection() {
   return (
@@ -18,14 +36,21 @@ export function ServicesSection() {
       </div>
 
       <div className={styles.serviceGrid}>
-        {siteInfo.services.map((service) => (
-          <article className={styles.serviceCard} key={service.name}>
-            <p className={styles.serviceThai}>{service.nameTh}</p>
-            <h3>{service.name}</h3>
-            <p>{service.description}</p>
-            <small>{service.descriptionTh}</small>
-          </article>
-        ))}
+        {siteInfo.services.map((service) => {
+          const Icon = serviceIcons[service.name] ?? Route
+
+          return (
+            <article className={styles.serviceCard} key={service.name}>
+              <div className={styles.iconShell} aria-hidden="true">
+                <Icon />
+              </div>
+              <p className={styles.serviceThai}>{service.nameTh}</p>
+              <h3>{service.name}</h3>
+              <p>{service.description}</p>
+              <small>{service.descriptionTh}</small>
+            </article>
+          )
+        })}
       </div>
     </section>
   )

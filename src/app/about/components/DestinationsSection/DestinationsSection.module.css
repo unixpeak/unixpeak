@@ -30,7 +30,6 @@
 .sectionHeader h2 {
   font-size: clamp(2rem, 4vw, var(--fs-section-title));
   line-height: 1.12;
-  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
@@ -81,6 +80,16 @@
   position: relative;
   z-index: 1;
   display: block;
+}
+
+.destinationIcon {
+  position: relative;
+  z-index: 1;
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent-strong);
+  stroke-width: 1.8;
+  margin-bottom: 0.8rem;
 }
 
 .destinationItem span {
