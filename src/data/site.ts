@@ -98,27 +98,27 @@ export const siteInfo: SiteInfo = {
     {
       label: 'Program Tours',
       labelTh: 'โปรแกรมทัวร์',
-      href: '/program-tours',
+      href: '/program-tours#top',
     },
     {
       label: 'ทัวร์ต่างประเทศ',
       labelTh: 'แพ็กเกจทัวร์',
-      href: '/tour-packages',
+      href: '/tour-packages#top',
     },
     {
       label: 'About Us',
       labelTh: 'เกี่ยวกับเรา',
-      href: '/about',
+      href: '/about#top',
     },
     {
       label: 'FAQ',
       labelTh: 'คำถามที่พบบ่อย',
-      href: '/faq',
+      href: '/faq#top',
     },
     {
       label: 'Contact',
       labelTh: 'ติดต่อเรา',
-      href: '/contact',
+      href: '/contact#top',
     },
   ],
   destinations: [

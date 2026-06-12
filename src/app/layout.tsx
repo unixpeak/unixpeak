@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer/Footer";
 import { Nav } from "@/components/Nav/Nav";
+import { TopHashCleaner } from "@/components/TopHashCleaner/TopHashCleaner";
 import { siteInfo } from "@/data/site";
 import "./globals.css";
 
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body id="top">
+        <TopHashCleaner />
         <Nav />
         <main>{children}</main>
         <Footer />

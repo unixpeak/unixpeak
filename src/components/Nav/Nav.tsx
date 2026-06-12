@@ -7,12 +7,17 @@ import { useEffect, useState } from "react";
 import { siteInfo } from "@/data/site";
 import styles from "./Nav.module.css";
 
+function getPathFromHref(href: string) {
+  return href.split("#")[0] || "/";
+}
+
 export function Nav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const navigationLinks = siteInfo.mainNavigation.filter(
     (link) => link.href !== "/#top",
   );
+  const isActiveHref = (href: string) => pathname === getPathFromHref(href);
 
   const openMenu = () => setIsOpen(true);
   const closeMenu = () => setIsOpen(false);
@@ -52,9 +57,7 @@ export function Nav() {
             {navigationLinks.map((link) => (
               <Link
                 className={`${styles.navLink} ${
-                  pathname === link.href || (pathname === "/" && link.href === "/#top")
-                    ? styles.activeLink
-                    : ""
+                  isActiveHref(link.href) ? styles.activeLink : ""
                 }`}
                 href={link.href}
                 key={link.href}
@@ -124,9 +127,7 @@ export function Nav() {
           {navigationLinks.map((link) => (
             <Link
               className={`${styles.drawerLink} ${
-                pathname === link.href || (pathname === "/" && link.href === "/#top")
-                  ? styles.drawerActiveLink
-                  : ""
+                isActiveHref(link.href) ? styles.drawerActiveLink : ""
               }`}
               href={link.href}
               key={link.href}
