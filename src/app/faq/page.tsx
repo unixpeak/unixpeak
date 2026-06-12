@@ -2,6 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { faqItems } from "@/data/faq";
 import { siteInfo } from "@/data/site";
+import {
+  ArrowRight,
+  BadgeCheck,
+  BriefcaseBusiness,
+  Building2,
+  ClipboardCheck,
+  Globe2,
+  Handshake,
+  MessageCircle,
+  Sparkles,
+  UserRoundCheck,
+  UsersRound,
+  type LucideIcon,
+} from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -18,6 +32,19 @@ export const metadata: Metadata = {
     url: "/faq",
   },
 };
+
+const faqIcons: LucideIcon[] = [
+  UserRoundCheck,
+  Sparkles,
+  UsersRound,
+  BriefcaseBusiness,
+  Building2,
+  Globe2,
+  MessageCircle,
+  BadgeCheck,
+  ClipboardCheck,
+  Handshake,
+];
 
 export default function FaqPage() {
   return (
@@ -39,18 +66,28 @@ export default function FaqPage() {
       </section>
 
       <section className={styles.faqGrid} aria-label="Frequently asked questions">
-        {faqItems.map((item) => (
-          <article className={styles.faqCard} key={item.question}>
-            <div className={styles.answerBlock}>
-              <h2>{item.question}</h2>
-              <p>{item.answer}</p>
-            </div>
-            <div className={styles.answerBlockThai}>
-              <h3>{item.questionTh}</h3>
-              <p>{item.answerTh}</p>
-            </div>
-          </article>
-        ))}
+        {faqItems.map((item, index) => {
+          const Icon = faqIcons[index] ?? MessageCircle;
+
+          return (
+            <article className={styles.faqCard} key={item.question}>
+              <div className={styles.questionHeader}>
+                <div className={styles.iconShell} aria-hidden="true">
+                  <Icon />
+                </div>
+                <div>
+                  <h2>{item.question}</h2>
+                  <h3>{item.questionTh}</h3>
+                </div>
+              </div>
+
+              <div className={styles.answerPair}>
+                <p>{item.answer}</p>
+                <p lang="th">{item.answerTh}</p>
+              </div>
+            </article>
+          );
+        })}
       </section>
 
       <section className={styles.cta}>
@@ -65,9 +102,11 @@ export default function FaqPage() {
         <div className={styles.ctaActions}>
           <Link className={styles.primaryButton} href="/contact">
             Contact
+            <MessageCircle className={styles.buttonIcon} aria-hidden="true" />
           </Link>
           <Link className={styles.secondaryButton} href="/program-tours">
             Program Tours
+            <ArrowRight className={styles.buttonIcon} aria-hidden="true" />
           </Link>
         </div>
       </section>

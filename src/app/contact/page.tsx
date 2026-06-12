@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteInfo } from "@/data/site";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Building2,
+  CalendarDays,
+  Camera,
+  ClipboardList,
+  MapPinned,
+  MessageCircle,
+  PhoneCall,
+  Send,
+  Share2,
+  SlidersHorizontal,
+  UsersRound,
+  type LucideIcon,
+} from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -18,12 +34,27 @@ export const metadata: Metadata = {
   },
 };
 
-const enquiryItems = [
-  "Destination",
-  "Travel dates",
-  "Number of travelers",
-  "Preferred travel style",
-  "Private, corporate, or MICE request",
+const enquiryItems: { label: string; icon: LucideIcon }[] = [
+  {
+    label: "Destination",
+    icon: MapPinned,
+  },
+  {
+    label: "Travel dates",
+    icon: CalendarDays,
+  },
+  {
+    label: "Travelers",
+    icon: UsersRound,
+  },
+  {
+    label: "Travel style",
+    icon: SlidersHorizontal,
+  },
+  {
+    label: "Private, corporate, or MICE",
+    icon: Building2,
+  },
 ];
 
 export default function ContactPage() {
@@ -59,20 +90,29 @@ export default function ContactPage() {
             href={`tel:${contact.phone.replaceAll("-", "")}`}
             key={contact.phone}
           >
+            <span className={styles.iconShell} aria-hidden="true">
+              <PhoneCall />
+            </span>
             <span>Phone {index + 1}</span>
             <strong>{contact.phone}</strong>
             <p>{contact.nameTh || contact.name}</p>
           </a>
         ))}
         <a className={styles.contactCard} href={whatsappHref}>
+          <span className={styles.iconShell} aria-hidden="true">
+            <MessageCircle />
+          </span>
           <span>WhatsApp</span>
           <strong>{siteInfo.contact.whatsapp}</strong>
-          <p>Message the travel planning team</p>
+          <p>Travel planning team</p>
         </a>
         <a className={styles.contactCard} href={lineHref}>
+          <span className={styles.iconShell} aria-hidden="true">
+            <Send />
+          </span>
           <span>LINE OA</span>
           <strong>{siteInfo.contact.lineOA}</strong>
-          <p>Contact via LINE Official Account</p>
+          <p>Official Account</p>
         </a>
       </section>
 
@@ -83,12 +123,14 @@ export default function ContactPage() {
           <div className={styles.socialList}>
             {facebook ? (
               <a href={facebook.href} target="_blank" rel="noreferrer">
+                <Share2 className={styles.listIcon} aria-hidden="true" />
                 <span>Facebook</span>
                 <strong>{facebook.value}</strong>
               </a>
             ) : null}
             {instagram ? (
               <a href={instagram.href} target="_blank" rel="noreferrer">
+                <Camera className={styles.listIcon} aria-hidden="true" />
                 <span>Instagram</span>
                 <strong>{instagram.value}</strong>
               </a>
@@ -100,8 +142,11 @@ export default function ContactPage() {
           <p className={styles.eyebrow}>Licence and trust</p>
           <h2>Thailand-based licensed travel company</h2>
           <div className={styles.licenceCard}>
-            <span>TAT licence</span>
-            <strong>{siteInfo.tatLicence}</strong>
+            <BadgeCheck className={styles.licenceIcon} aria-hidden="true" />
+            <div>
+              <span>TAT licence</span>
+              <strong>{siteInfo.tatLicence}</strong>
+            </div>
           </div>
         </div>
       </section>
@@ -116,9 +161,16 @@ export default function ContactPage() {
           </p>
         </div>
         <ul>
-          {enquiryItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
+          {enquiryItems.map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <li key={item.label}>
+                <Icon aria-hidden="true" />
+                <span>{item.label}</span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
@@ -130,12 +182,16 @@ export default function ContactPage() {
         <div className={styles.ctaActions}>
           <a className={styles.primaryButton} href={whatsappHref}>
             WhatsApp
+            <MessageCircle className={styles.buttonIcon} aria-hidden="true" />
           </a>
           <a className={styles.secondaryButton} href={lineHref}>
             LINE OA
+            <Send className={styles.buttonIcon} aria-hidden="true" />
           </a>
           <Link className={styles.textLink} href="/program-tours">
+            <ClipboardList className={styles.buttonIcon} aria-hidden="true" />
             Program Tours
+            <ArrowRight className={styles.buttonIcon} aria-hidden="true" />
           </Link>
         </div>
       </section>
